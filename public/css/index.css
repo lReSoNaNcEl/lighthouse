@@ -9,7 +9,6 @@
 
 body {
   font-family: "PT Root UI", "Microsoft Sans Serif", sans-serif;
-  background-color: #2b1428;
 }
 
 img {
@@ -110,9 +109,72 @@ button {
   color: white;
 }
 
+.chip {
+  width: max-content;
+  color: white;
+  border: 2px solid #ffd000;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 18px;
+  margin-top: 28px;
+}
+
+.button {
+  display: block;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+  padding: 32px 40px;
+  margin: 70px auto 0;
+}
+
+.background-layer {
+  background: linear-gradient(
+    #252f6c,
+    #363068,
+    #483166,
+    #5c325f,
+    #853c50,
+    #b3463e,
+    #b3463e,
+    #b3463e
+  );
+  position: relative;
+  padding-bottom: 115px;
+}
+
+.background-layer > section {
+  position: relative;
+  z-index: 2;
+}
+
+.background__lighthouse {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
 .intro-layout {
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 70px 0 200px;
+  position: relative;
+}
+
+.intro-layout::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  top: 0;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+  position: absolute;
+  z-index: 1;
 }
 
 .intro {
@@ -121,6 +183,7 @@ button {
 }
 
 .intro__wrapper {
+  z-index: 2;
   margin-top: 60px;
 }
 
@@ -158,13 +221,13 @@ button {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 280px);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 45px;
   margin-top: 55px;
 }
 
 .card {
-  width: 280px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   transition: 0.3s all;
@@ -172,7 +235,9 @@ button {
 
 .card__img {
   width: 100%;
-  height: 206px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 17px;
   transition: 0.3s all;
 }
 
@@ -211,8 +276,15 @@ button {
   margin-top: 10px;
 }
 
+.gallery__description {
+  max-width: 950px;
+  font-size: 20px;
+  color: white;
+}
+
 .gallery__grid {
   display: grid;
+  margin-top: 40px;
 }
 
 .gallery__grid--3 {
@@ -268,7 +340,87 @@ button {
   color: white;
 }
 
+.categories-layout {
+  background: linear-gradient(#2d1d3c, #402036);
+  padding: 80px 0;
+  margin-top: 75px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+}
+
+.categories__item {
+  width: 100%;
+  height: 208px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 18px;
+  border: 1px solid #6e6075;
+  transition: 0.3s all;
+  padding: 28px 0;
+}
+
+.categories__item:hover {
+  border: 1px solid white;
+  background-color: white;
+}
+
+.categories__item:hover .categories__title {
+  color: black;
+}
+
+.categories__title {
+  font-size: 25px;
+  line-height: 32px;
+  color: white;
+  transition: 0.3s all;
+}
+
+.categories__img {
+  max-width: 100px;
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+.posts {
+  padding-top: 70px;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-position: 50% 50%;
+  top: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .intro-layout {
+    padding: 50px 0 120px;
+  }
+
+  .intro__slider {
+    max-width: 375px;
+  }
+
+  .posts {
+    padding-top: 50px;
+  }
+}
+
 @media only screen and (max-width: 992px) {
+  .title {
+    font-size: 50px;
+  }
+
   .header__search {
     margin-left: 24px;
   }
@@ -285,6 +437,59 @@ button {
 
   .headline__tag {
     font-size: 24px;
+  }
+
+  .intro {
+    flex-direction: column;
+  }
+
+  .intro__wrapper {
+    margin: 0;
+  }
+
+  .intro__slider {
+    max-width: 75%;
+    display: block;
+    position: static;
+    margin: 24px auto 0;
+  }
+
+  .gallery__description {
+    max-width: 100%;
+  }
+
+  .gallery__grid--3 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 26px;
+    margin-top: 32px;
+  }
+
+  .categories-layout {
+    padding: 40px 0;
+  }
+
+  .categories {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+  }
+
+  .categories__item {
+    height: 160px;
+    padding: 20px 0;
+  }
+
+  .categories__title {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .categories__img {
+    max-width: 80px;
   }
 }
 
@@ -323,6 +528,15 @@ button {
     font-size: 30px;
   }
 
+  .chip {
+    padding: 12px 18px;
+    margin-top: 22px;
+  }
+
+  .button {
+    padding: 16px 50px;
+  }
+
   .headline-layout {
     padding: 70px 0 50px;
   }
@@ -339,5 +553,73 @@ button {
 
   .headline__tag {
     font-size: 16px;
+  }
+
+  .intro-layout {
+    padding: 20px 0 100px;
+  }
+
+  .intro .title {
+    margin: 0;
+  }
+
+  .intro__contacts {
+    margin-top: 20px;
+  }
+
+  .contacts__item {
+    font-size: 12px;
+  }
+
+  .gallery__description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .gallery__grid--3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .gallery__grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .card__title {
+    font-size: 17px;
+    line-height: 20px;
+    margin-top: 15px;
+  }
+
+  .card__description {
+    font-size: 12px;
+  }
+
+  .card__tag {
+    font-size: 10px;
+    padding: 6px;
+    margin-top: 10px;
+  }
+
+  .card__address {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+
+  .categories-layout {
+    margin-top: 40px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 28px;
+  }
+
+  .categories__img {
+    max-width: 75px;
+  }
+
+  .posts {
+    padding-top: 20px;
   }
 }
