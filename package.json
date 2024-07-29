@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "vite serve",
-    "prettier": "prettier --write ./public"
+    "prettier": "prettier --write src"
   },
   "author": "",
   "license": "ISC",
