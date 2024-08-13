@@ -3,8 +3,19 @@ const gallery = document.getElementById("gallery");
 let zoomCount = 0;
 const maxZoomCount = 2;
 
+const updateImagesUrls = () => {
+  const images = [...document.querySelectorAll(".gallery__grid img")];
+  images.forEach((img) => {
+    const url = new URL(img.src);
+    url.searchParams.set("size", maxZoomCount - zoomCount);
+    img.src = url.toString();
+  });
+};
+
 gallery.addEventListener("click", (e) => {
   if (zoomCount !== maxZoomCount) e.preventDefault();
+
+  updateImagesUrls();
 
   switch (zoomCount) {
     case 1: {
