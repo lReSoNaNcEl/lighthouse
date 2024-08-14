@@ -396,6 +396,25 @@ button {
   right: 100px;
 }
 
+.swiper-wrapper {
+  cursor: grab;
+}
+
+.swiper-slide {
+  width: 372px;
+}
+
+.swiper-slide img {
+  width: auto;
+  max-height: 630px;
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2)
+}
+
+.swiper-slide-shadow {
+  opacity: 1;
+}
+
 .contacts__item {
   color: #1b45c9;
   font-weight: bold;
