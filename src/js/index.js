@@ -84,7 +84,7 @@ const siteTheme = {
 };
 
 //В эту переменную можно устанавливать значение из результатов серверного запроса
-const defaultTheme = siteTheme.DARK;
+const defaultTheme = siteTheme.LIGHT;
 
 document.documentElement.classList.add(defaultTheme);
 
