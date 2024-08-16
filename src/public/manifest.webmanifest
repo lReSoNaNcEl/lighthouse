@@ -9,8 +9,8 @@
     "scope": "/",
     "icons": [
         {
-          "src": "favicon.svg",
-          "sizes": "144x144",
+          "src": "https://mayak.app/svg/favicon.svg",
+          "sizes": "120x120",
           "type": "image/svg+xml"
         }
       ],
