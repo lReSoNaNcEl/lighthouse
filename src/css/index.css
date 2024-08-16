@@ -403,6 +403,31 @@ button {
   right: 100px;
 }
 
+.intro__player {
+  max-width: 612px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.player__layer {
+  display: block;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  overflow: hidden;
+}
+
+.player__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .swiper-wrapper {
   cursor: grab;
 }
@@ -465,6 +490,10 @@ button {
 
 .cards.column-3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.cards.small-sizes .card:nth-of-type(2n) .card__img {
+  width: 80%;
 }
 
 .card {
@@ -748,6 +777,12 @@ button {
   animation: tada 1s;
 }
 
+@media only screen and (min-width: 1920px) {
+  .background__lighthouse {
+    background-position: top;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
@@ -759,6 +794,10 @@ button {
 
   .intro__slider {
     max-width: 375px;
+  }
+
+  .intro__player {
+    max-width: 450px;
   }
 
   .intro__moon {
@@ -823,6 +862,11 @@ button {
     display: block;
     position: static;
     margin: 24px auto 0;
+  }
+
+  .intro__player {
+    max-width: 100%;
+    margin-top: 24px;
   }
 
   .gallery__description {

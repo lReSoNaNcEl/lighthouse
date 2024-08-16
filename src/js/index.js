@@ -11,7 +11,7 @@ particlesJS("particles-js", {
       value: "#ffffff",
     },
     shape: {
-      type: "circle",
+      type: "star",
       stroke: {
         width: 0,
         color: "#000000",
@@ -50,7 +50,7 @@ particlesJS("particles-js", {
     },
     move: {
       enable: true,
-      speed: 3,
+      speed: 1.5,
       direction: "none",
       random: false,
       straight: false,

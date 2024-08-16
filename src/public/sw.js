@@ -33,9 +33,6 @@ self.addEventListener("install", (event) => {
       "/assets/logo.svg",
       "/assets/mini-arrow.svg",
       "/assets/moon.svg",
-      "/assets/lighthouse-coin.svg",
-      "/assets/lighthouse-coin.svg",
-      "/assets/lighthouse-coin.svg",
     ]),
   );
 });
