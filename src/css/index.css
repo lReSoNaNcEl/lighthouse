@@ -492,8 +492,8 @@ button {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.cards.small-sizes .card:nth-of-type(2n) .card__img {
-  width: 80%;
+.cards.small-sizes {
+  grid-template-columns: 1.2fr 0.8fr 1.2fr 0.8fr;
 }
 
 .card {
@@ -745,6 +745,11 @@ button {
   z-index: 1;
 }
 
+.background__lighthouse.small {
+  height: 518px;
+  background-position: center top;
+}
+
 .footer__chest {
   width: 73px;
   height: 50px;
@@ -786,6 +791,10 @@ button {
 @media only screen and (max-width: 1200px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards.small-sizes {
+    grid-template-columns: 1fr 0.8fr 1fr;
   }
 
   .intro-layout {
@@ -883,6 +892,10 @@ button {
     margin-top: 32px;
   }
 
+  .cards.small-sizes {
+    grid-template-columns: 1fr 0.8fr;
+  }
+
   .cards.column-3 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -917,6 +930,10 @@ button {
     height: 400px;
     background: url("../assets/lighthouse-small.png") center/cover no-repeat;
     overflow: hidden;
+  }
+
+  .background__lighthouse.small {
+    height: 250px;
   }
 
   .footer__chest {
