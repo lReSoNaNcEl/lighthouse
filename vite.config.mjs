@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import path from 'path';
-import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
     root: path.resolve('./src'),
@@ -18,13 +17,4 @@ export default defineConfig({
             }
         }
     },
-    // plugins: [
-    //     VitePWA({
-    //         registerType: 'autoUpdate',
-    //         workbox: {
-    //             clientsClaim: true,
-    //             skipWaiting: true
-    //         }
-    //     })
-    // ]
 })
