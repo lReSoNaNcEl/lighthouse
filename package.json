@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "vite serve",
-    "prettier": "prettier --write src"
+    "prettier": "prettier --write src",
+    "pwa-assets-generate": "pwa-assets-generator --preset minimal-2023 ./src/public/favicon.svg"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@vite-pwa/assets-generator": "^0.2.4",
     "prettier": "^3.3.3",
-    "vite": "^5.3.4",
-    "vite-plugin-pwa": "^0.20.1"
+    "vite": "^5.3.4"
   }
 }
