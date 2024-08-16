@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import path from 'path';
+import path from 'path'
 
 export default defineConfig({
     root: path.resolve('./src'),
@@ -12,8 +12,9 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: path.resolve(__dirname, './src/index.html'),
-                new_directions: path.resolve(__dirname, './src/new-directions.html')
+                popular: path.resolve(__dirname, './src/popular.html'),
+                city: path.resolve(__dirname, './src/city.html')
             }
         }
-    }
+    },
 })

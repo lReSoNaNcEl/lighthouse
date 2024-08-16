@@ -21,6 +21,7 @@
   --search--text-color: #6b6d78;
   --layout-overlay-color: rgba(0, 0, 0, 0.4);
   --layout-categories-color: linear-gradient(#2d1d3c, #402036);
+  --theme-switcher-color: #232637;
 }
 
 :root.light-theme {
@@ -32,13 +33,22 @@
   --search--text-color: #19232d;
   --layout-overlay-color: #f2f6fd;
   --layout-categories-color: #2b2e35;
-}
-
-.dark-theme .footer {
-  display: none;
+  --theme-switcher-color: white;
 }
 
 .dark-theme .contacts__icon {
+  display: none;
+}
+
+.dark-theme .categories__item {
+  border: 1px solid #6e6075;
+}
+
+.dark-theme .categories__item:hover {
+  border: 1px solid white;
+}
+
+.dark-theme .footer {
   display: none;
 }
 
@@ -75,7 +85,7 @@
   margin: 0;
   box-sizing: border-box;
   transition-property: color, background-color, border-color;
-  transition-duration: 0.5s;
+  transition-duration: 0.35s;
   transition-timing-function: ease;
 }
 
@@ -167,9 +177,15 @@ button {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background-color: var(--white-color);
+  background-color: var(--theme-switcher-color);
   border-radius: 10px;
   cursor: pointer;
+}
+
+.switcher__icon {
+  width: 22px;
+  height: 22px;
+  color: var(--text-color);
 }
 
 .switcher__icon:hover {
@@ -334,20 +350,11 @@ button {
 .background-layer {
   background: var(--background-color);
   position: relative;
-  padding-bottom: 115px;
 }
 
 .background-layer > section {
   position: relative;
   z-index: 2;
-}
-
-.background__lighthouse {
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
 }
 
 .intro-layout {
@@ -456,6 +463,10 @@ button {
   margin-top: 55px;
 }
 
+.cards.column-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .card {
   width: 100%;
   display: flex;
@@ -496,6 +507,7 @@ button {
 
 .card__title {
   font-size: 25px;
+  font-weight: bold;
   line-height: 32px;
   color: var(--text-color);
   margin-top: 16px;
@@ -532,7 +544,7 @@ button {
 }
 
 .gallery__grid {
-  column-gap: 10px;
+  column-gap: 0;
   margin-top: 15px;
 }
 
@@ -552,7 +564,6 @@ button {
   width: 100%;
   height: auto;
   background: linear-gradient(180deg, hsla(0, 0%, 60%, 0) 0, rgba(0, 0, 0, .7));
-  margin-bottom: 10px;
 }
 
 .gallery__item a {
@@ -638,13 +649,11 @@ button {
   flex-direction: column;
   align-items: center;
   border-radius: 18px;
-  border: 1px solid #6e6075;
   transition: 0.3s all;
   padding: 28px 0;
 }
 
 .categories__item:hover {
-  border: 1px solid white;
   background-color: white;
 }
 
@@ -678,15 +687,61 @@ button {
   top: 0;
 }
 
+.footer-layout {
+  width: 100%;
+  position: relative;
+}
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 100px;
+  padding: 50px 0;
 }
 
 .footer__logo {
   width: 120px;
+}
+
+.background__lighthouse {
+  width: 100%;
+  height: 1036px;
+  background: url('../assets/lighthouse.png') center/cover no-repeat;
+  position: relative;
+  bottom: -10px;
+  z-index: 1;
+}
+
+.footer__chest {
+  width: 73px;
+  height: 50px;
+  position: absolute;
+  left: 110px;
+  bottom: 90px;
+  z-index: 2;
+}
+
+.footer__coin {
+  width: 42px;
+  height: 43px;
+  position: absolute;
+  left: 134px;
+  bottom: 118px;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.footer__ground {
+  width: 510px;
+  height: 159px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.footer__coin:hover {
+  animation: tada 1s;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -780,6 +835,10 @@ button {
     margin-top: 32px;
   }
 
+  .cards.column-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .categories-layout {
     padding: 40px 0;
   }
@@ -802,6 +861,37 @@ button {
   .categories__img {
     max-width: 80px;
     max-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .background__lighthouse {
+    height: 400px;
+    background: url('../assets/lighthouse-small.png') center/cover no-repeat;
+    overflow: hidden;
+  }
+
+  .footer__chest {
+    width: 35px;
+    height: 24px;
+    left: 47px;
+    bottom: 40px;
+  }
+
+  .footer__coin {
+    width: 20px;
+    height: 20px;
+    left: 60px;
+    bottom: 55px;
+  }
+
+  .footer__ground {
+    width: 250px;
+    height: 80px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 3;
   }
 }
 
