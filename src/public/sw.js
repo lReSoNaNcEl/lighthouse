@@ -34,6 +34,10 @@ self.addEventListener("install", (event) => {
       "/assets/logo.svg",
       "/assets/mini-arrow.svg",
       "/assets/moon.svg",
+      "/assets/coin-gold.png",
+      "/assets/coin-silver.png",
+      "/assets/coin-bronze.png",
+      "/assets/coin-tree.png",
     ]),
   );
 });

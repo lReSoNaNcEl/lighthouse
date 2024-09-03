@@ -4,24 +4,24 @@ const siteTheme = {
 };
 
 //В эту переменную можно устанавливать значение из результатов серверного запроса
-const defaultTheme = localStorage.getItem("theme") || siteTheme.LIGHT;
+const defaultTheme = localStorage.getItem("theme") || siteTheme.DARK;
 
 localStorage.setItem("theme", defaultTheme);
 
-document.documentElement.classList.add(defaultTheme);
+document.body.classList.add(defaultTheme);
 
 document.getElementById("theme-switcher")?.addEventListener("click", () => {
   const oppositeTheme = Object.values(siteTheme).find(
     (theme) => theme !== defaultTheme,
   );
 
-  if (document.documentElement.classList.contains(defaultTheme)) {
-    document.documentElement.classList.remove(defaultTheme);
-    document.documentElement.classList.add(oppositeTheme);
+  if (document.body.classList.contains(defaultTheme)) {
+    document.body.classList.remove(defaultTheme);
+    document.body.classList.add(oppositeTheme);
     localStorage.setItem("theme", oppositeTheme);
   } else {
-    document.documentElement.classList.add(defaultTheme);
-    document.documentElement.classList.remove(oppositeTheme);
+    document.body.classList.add(defaultTheme);
+    document.body.classList.remove(oppositeTheme);
     localStorage.setItem("theme", defaultTheme);
   }
 });

@@ -1,9 +1,16 @@
 :root {
   --yellow-color: #ffd000;
+  --danger-color: #e53f30;
   --lightgreen-color: #25d366;
+  --button-primary: #0c6afe;
+  --button-primary-active: #2344b0;
+  --button-primary-hover: #2b54da;
+  --button-secondary: #f2f2f2;
+  --button-secondary-active: #bfc8da;
+  --button-secondary-hover: #dde2ec;
 }
 
-:root.dark-theme {
+.dark-theme {
   --white-color: white;
   --text-color: white;
   --background-color: linear-gradient(
@@ -24,7 +31,7 @@
   --theme-switcher-color: #232637;
 }
 
-:root.light-theme {
+.light-theme {
   --white-color: white;
   --text-color: black;
   --background-color: white;
@@ -121,6 +128,40 @@ button {
   margin: 0 auto;
 }
 
+.button {
+  min-width: 180px;
+  font-size: 16px;
+  padding: 18px 30px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: var(--button-primary);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background-color: var(--button-primary-hover);
+}
+
+.button-primary:active {
+  background-color: var(--button-primary-active);
+}
+
+.button-secondary {
+  background-color: var(--button-secondary);
+  color: #171717;
+}
+
+.button-secondary:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.button-secondary:active {
+  background-color: var(--button-secondary-active);
+}
+
 .header-layout {
   position: sticky;
   top: 0;
@@ -211,7 +252,7 @@ button {
 }
 
 .menu__burger.active:hover .burger__line {
-  background-color: #e53f30;
+  background-color: var(--danger-color);
 }
 
 .menu__burger.active .burger__line {
@@ -335,7 +376,7 @@ button {
   background-color: var(--yellow-color);
 }
 
-.button {
+.button-load-more {
   display: block;
   border-radius: 100px;
   font-size: 16px;
@@ -479,6 +520,19 @@ button {
   right: -110px;
   top: 165px;
   z-index: 1;
+}
+
+.intro__coins {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: -120px;
+  z-index: 2;
+}
+
+.intro__coins img {
+  max-width: 129px;
+  cursor: pointer;
 }
 
 .cards {
@@ -733,7 +787,7 @@ button {
 }
 
 .footer__logo {
-  width: 120px;
+  width: 100px;
 }
 
 .background__lighthouse {
@@ -782,9 +836,83 @@ button {
   animation: tada 1s;
 }
 
+.modal {
+  width: 100%;
+  max-width: 938px;
+  min-height: 463px;
+  position: fixed;
+  top: 50% !important;
+  left: 50% !important;
+  border: none;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  inset: 20px 50px 30px 10px;
+}
+
+.modal[open] {
+  animation: fadeIn 0.8s forwards;
+}
+
+.modal:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal__layer {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 45px 120px 65px;
+}
+
+.modal::backdrop,
+.modal + .backdrop {
+  backdrop-filter: blur(0.25rem);
+  background-color: rgb(0 0 0 / 70%);
+  cursor: pointer;
+}
+
+.modal__title {
+  font-size: 30px;
+}
+
+.modal__coin {
+  max-width: 133px;
+  margin-top: 20px;
+}
+
+.modal__description {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.modal__wrapper {
+  display: flex;
+  gap: 40px;
+  margin-top: 35px;
+}
+
+.modal__cross {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: #6c6e79;
+  cursor: pointer;
+}
+
+.modal__cross:hover {
+  color: var(--danger-color);
+}
+
 @media only screen and (min-width: 1920px) {
   .background__lighthouse {
     background-position: top;
+    bottom: 0;
   }
 }
 
@@ -815,6 +943,14 @@ button {
     right: 20px;
     top: 165px;
     z-index: 1;
+  }
+
+  .intro__coins {
+    bottom: -90px;
+  }
+
+  .intro__coins img {
+    max-width: 52px;
   }
 
   .gallery {
