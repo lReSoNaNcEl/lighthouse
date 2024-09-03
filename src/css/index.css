@@ -1094,6 +1094,20 @@ button {
     left: 0;
     z-index: 3;
   }
+
+  .modal__layer {
+    padding: 70px 20px 40px;
+  }
+
+  .modal__wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modal__cross {
+    top: 23px;
+    right: 23px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
