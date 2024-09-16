@@ -109,6 +109,9 @@ const tooltip = tippy(searchInput, {
   },
   plugins: [hideOnEsc, hideOnEmptyInput],
   offset: [0, -5],
+  popperOptions: {
+    strategy: 'fixed',
+  },
 });
 
 searchInput.addEventListener("focus", () => {
