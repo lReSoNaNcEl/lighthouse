@@ -220,7 +220,6 @@ ol {
   background-color: var(--search-color);
   transition: none;
   z-index: 10;
-  top: 25px;
   margin-left: 180px;
 }
 
@@ -1182,7 +1181,7 @@ ol {
 @media only screen and (max-width: 768px) {
   .header__search.focused {
     position: absolute;
-    top: 10px;
+    bottom: 0;
     left: 50%;
     width: 92%;
     margin: 0;
@@ -1191,10 +1190,6 @@ ol {
 
   .search__wrapper {
     flex-basis: 40px;
-  }
-
-  .header__search.focused .search__wrapper:last-child {
-    display: flex;
   }
 
   .search__input {
