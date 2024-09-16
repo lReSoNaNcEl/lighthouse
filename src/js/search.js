@@ -61,9 +61,9 @@ const hideOnEmptyInput = {
 
       const HTML = data
         .map(
-          (item, i) => `
+          (item) => `
                 <a class="result__item" role="presentation" href="${item.url}">
-                      <img class="result__${i % 2 ? "icon" : "img"}" src="${i % 2 ? "./assets/clock.svg" : item.thumbnailUrl}" alt="${item.title}">
+                      <img class="result__img" src="${item.thumbnailUrl}" alt="${item.title}">
                       <span class="result__text">
                     ${item.title}
                   </span>
