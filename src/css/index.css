@@ -1188,6 +1188,10 @@ ol {
     transform: translateX(-50%);
   }
 
+  .header__search {
+    top: 70px;
+  }
+
   .search__wrapper {
     flex-basis: 40px;
   }
