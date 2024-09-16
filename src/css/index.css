@@ -980,6 +980,7 @@ ol {
   align-items: center;
   justify-content: space-between;
   background-color: var(--white-color);
+  border-radius: inherit;
   position: relative;
   padding: 45px 120px 65px;
 }
