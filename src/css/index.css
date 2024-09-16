@@ -1189,7 +1189,8 @@ ol {
   }
 
   .header__search {
-    top: 70px;
+    top: 65px;
+    transform: translateY(-65px);
   }
 
   .search__wrapper {
