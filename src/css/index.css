@@ -1188,8 +1188,19 @@ ol {
     transform: translateX(-50%);
   }
 
+  .header__search.focused .search__input {
+    visibility: visible;
+    pointer-events: visible;
+  }
+
   .header__search {
-    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .search__icon {
+    color: var(--text-color);
   }
 
   .search__wrapper {
@@ -1197,6 +1208,8 @@ ol {
   }
 
   .search__input {
+    visibility: hidden;
+    pointer-events: none;
     text-indent: 10px;
   }
 
@@ -1276,14 +1289,19 @@ ol {
     width: 62px;
   }
 
+  .header__search {
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+  }
+
+  .header__search:not(.focused) .search__wrapper {
+    flex-basis: 30px;
+  }
+
   .search__icon {
     width: 13px;
     height: 13px;
-  }
-
-  .header__search {
-    height: 35px;
-    margin-left: 12px;
   }
 
   .header__search.focused {
