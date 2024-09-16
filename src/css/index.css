@@ -1181,7 +1181,7 @@ ol {
 @media only screen and (max-width: 768px) {
   .header__search.focused {
     position: absolute;
-    top: 10px;
+    top: 12px;
     left: 50%;
     width: 92%;
     margin: 0;
@@ -1189,8 +1189,20 @@ ol {
   }
 
   .header__search.focused .search__input {
-    visibility: visible;
-    pointer-events: visible;
+    display: block;
+  }
+
+  .header__search:not(.focused) .search__input {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: -40px;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .search__input {
+    text-indent: 10px;
   }
 
   .header__search {
@@ -1207,10 +1219,8 @@ ol {
     flex-basis: 40px;
   }
 
-  .search__input {
-    visibility: hidden;
-    pointer-events: none;
-    text-indent: 10px;
+  .search__wrapper:first-child {
+    cursor: pointer;
   }
 
   .result__item {
@@ -1297,6 +1307,12 @@ ol {
 
   .header__search:not(.focused) .search__wrapper {
     flex-basis: 30px;
+  }
+
+  .header__search:not(.focused) .search__input {
+    width: 30px;
+    height: 30px;
+    left: -30px;
   }
 
   .search__icon {
