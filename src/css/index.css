@@ -1191,7 +1191,6 @@ ol {
   .header__search {
     position: fixed;
     top: 65px;
-    transform: translateY(65px);
   }
 
   .search__wrapper {
