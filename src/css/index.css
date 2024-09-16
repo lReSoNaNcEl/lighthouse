@@ -307,6 +307,7 @@ ol {
 
 .header__search div[data-tippy-root] {
   width: 100%;
+  top: 0;
 }
 
 .header__search .tippy-box[data-theme~="custom"] {

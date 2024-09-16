@@ -91,32 +91,29 @@ const hideOnEmptyInput = {
   },
 };
 
-const tooltip = tippy(searchInput, {
-  content: searchResult.innerHTML,
-  trigger: "click",
-  duration: 0,
-  triggerTarget: [searchContainer],
-  arrow: false,
-  placement: "bottom",
-  hideOnClick: false,
-  allowHTML: true,
-  appendTo: searchContainer,
-  maxWidth: "none",
-  theme: "custom",
-  interactive: true,
-  onClickOutside(instance) {
-    instance.hide();
-  },
-  plugins: [hideOnEsc, hideOnEmptyInput],
-  offset: [0, -5],
-  popperOptions: {
-    strategy: 'fixed',
-  },
-});
-
-searchInput.addEventListener("focus", () => {
-  tooltip.enable();
-});
+// const tooltip = tippy(searchInput, {
+//   content: searchResult.innerHTML,
+//   trigger: "click",
+//   duration: 0,
+//   triggerTarget: [searchContainer],
+//   arrow: false,
+//   placement: "bottom",
+//   hideOnClick: false,
+//   allowHTML: true,
+//   appendTo: searchContainer,
+//   maxWidth: "none",
+//   theme: "custom",
+//   interactive: true,
+//   onClickOutside(instance) {
+//     instance.hide();
+//   },
+//   plugins: [hideOnEsc, hideOnEmptyInput],
+//   offset: [0, -5],
+// });
+//
+// searchInput.addEventListener("focus", () => {
+//   tooltip.enable();
+// });
 
 searchCloseIcon.addEventListener("click", () => {
   searchInput.value = "";
