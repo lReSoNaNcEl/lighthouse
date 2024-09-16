@@ -1181,7 +1181,7 @@ ol {
 @media only screen and (max-width: 768px) {
   .header__search.focused {
     position: absolute;
-    bottom: 0;
+    top: 10px;
     left: 50%;
     width: 92%;
     margin: 0;
@@ -1278,7 +1278,7 @@ ol {
   }
 
   .header__search {
-    height: 30px;
+    height: 35px;
     margin-left: 12px;
   }
 
