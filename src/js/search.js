@@ -68,7 +68,7 @@ const hideOnEmptyInput = {
                     ${item.title}
                   </span>
                     </a>
-            `,
+          `,
         )
         .reduce((acc, item) => acc + item, "");
 
@@ -91,7 +91,7 @@ const hideOnEmptyInput = {
   },
 };
 
-const tooltip = tippy(searchInput, {
+const tooltipSearch = tippy(searchInput, {
   content: searchResult.innerHTML,
   trigger: "click",
   duration: 0,
@@ -112,11 +112,11 @@ const tooltip = tippy(searchInput, {
 });
 
 searchInput.addEventListener("focus", () => {
-  tooltip.enable();
+  tooltipSearch.enable();
 });
 
 searchCloseIcon.addEventListener("click", () => {
   searchInput.value = "";
   searchCloseIcon.style.display = "none";
-  tooltip.disable();
+  tooltipSearch.disable();
 });

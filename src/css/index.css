@@ -128,14 +128,14 @@ ol {
 }
 
 .container-fluid {
-  max-width: 1280px;
-  padding: 0 15px;
+  max-width: 1506px;
+  padding: 0 6%;
   margin: 0 auto;
 }
 
 .container {
-  max-width: 1280px;
-  padding: 0 15px;
+  max-width: 1456px;
+  padding: 0 6%;
   margin: 0 auto;
 }
 
@@ -200,6 +200,10 @@ ol {
 
 .header__wrapper:first-child {
   flex-grow: 1;
+}
+
+.header__wrapper:has(.header__switcher) {
+  align-items: center;
 }
 
 .header__link {
@@ -325,7 +329,7 @@ ol {
   padding: 16px 0;
 }
 
-.header__search .tippy-content {
+.tippy-content {
   padding: 0;
 }
 
@@ -352,13 +356,122 @@ ol {
   animation: 0.6s rotateIn;
 }
 
+.search__address {
+  position: relative;
+}
+
+.address__icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+  margin-left: 24px;
+}
+
+.search__address div[data-tippy-root] {
+  transform: none !important;
+  top: -12px !important;
+}
+
+.search__address .tippy-box[data-theme~="custom"] {
+  width: 416px;
+  height: 100%;
+  border-radius: 30px;
+  color: var(--text-color);
+  background-color: var(--search-color);
+  padding: 22px 26px;
+}
+
+.address__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address__title {
+  font-size: 30px;
+}
+
+.address__close:hover {
+  color: var(--danger-color);
+  cursor: pointer;
+}
+
+.address__search {
+  position: relative;
+  margin-top: 24px;
+}
+
+.address__search svg {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.address__input {
+  width: 100%;
+  height: 52px;
+  border-radius: 100px;
+  font-size: 20px;
+  background-color: var(--search-color);
+  color: var(--text-color);
+  border: 1px solid var(--search--text-color);
+  padding: 0 15px 0 50px;
+}
+
+.address__input:focus {
+  border: 1px solid var(--text-color);
+}
+
+.address__input:focus + svg {
+  color: var(--text-color);
+}
+
+.address__content {
+  overflow-y: auto;
+  max-height: 500px;
+  font-size: 16px;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--search--text-color) var(--search-color);
+}
+
+.address_divider {
+  opacity: 0.1;
+  border: 1px solid var(--text-color);
+  margin: 22px 0;
+}
+
+.address__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.address__tag {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border: 1px solid var(--search--text-color);
+  border-radius: 100px;
+  padding: 9px 14px;
+}
+
+.address__tag svg {
+  margin-left: 10px;
+}
+
 .menu__burger {
   display: flex;
   flex-direction: column;
   align-self: center;
   gap: 3px;
-  margin-left: 26px;
   cursor: pointer;
+  margin-left: 24px;
 }
 
 .menu__burger.active {
@@ -468,7 +581,7 @@ ol {
   color: var(--text-color);
   align-items: center;
   transition: 0.3s all;
-  padding: 8px 8px 16px;
+  padding: 8px 0 12px;
 }
 
 .menu__item:hover a,
@@ -1376,6 +1489,62 @@ ol {
   .switcher__icon {
     width: 15px;
     height: 15px;
+  }
+
+  .search__address div[data-tippy-root] {
+    width: 94%;
+    position: fixed !important;
+    top: 12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .search__address .tippy-box[data-theme~="custom"] {
+    width: 100%;
+    border-radius: 15px;
+    padding: 18px 20px;
+  }
+
+  .address__title {
+    font-size: 20px;
+  }
+
+  .address__close:hover {
+    color: var(--danger-color);
+    cursor: pointer;
+  }
+
+  .address__search {
+    margin-top: 16px;
+  }
+
+  .address__search svg {
+    left: 15px;
+  }
+
+  .address__input {
+    height: 40px;
+    font-size: 12px;
+    padding: 0 10px 0 35px;
+  }
+
+  .address__content {
+    max-height: 450px;
+  }
+
+  .address_divider {
+    display: none;
+  }
+
+  .address__tags {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .address__icon {
+    width: 19px;
+    height: 19px;
+    margin-left: 12px;
   }
 
   .menu__burger {

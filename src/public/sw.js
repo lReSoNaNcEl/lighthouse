@@ -19,6 +19,7 @@ self.addEventListener("install", (event) => {
       "/registerSW.js",
       "/category.js",
       "/app-banner.js",
+      "/search-address.js",
       "/theme.js",
       "/menu.js",
       "/swiper.js",
