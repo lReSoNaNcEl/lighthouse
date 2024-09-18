@@ -142,9 +142,15 @@ ol {
 .button {
   min-width: 180px;
   font-size: 16px;
+  text-align: center;
   padding: 18px 30px;
   border-radius: 100px;
   cursor: pointer;
+}
+
+.button-small {
+  min-width: 152px;
+  padding: 12px 30px;
 }
 
 .button-primary {
@@ -1026,6 +1032,39 @@ ol {
   color: var(--danger-color);
 }
 
+.banner {
+  max-width: 375px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--white-color);
+  border-radius: 30px 30px 0 0;
+  position: fixed;
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+  animation: fadeOutDown 0.3s forwards;
+  z-index: 1000;
+  padding: 25px 22px 32px;
+}
+
+.banner.show {
+  opacity: 1;
+  animation: fadeInUp 0.3s forwards;
+}
+
+.banner.closed {
+  opacity: 0;
+  animation: fadeOutDown 0.3s forwards;
+}
+
+.banner__wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
 @media only screen and (min-width: 1920px) {
   .background__lighthouse {
     background-position: top;
@@ -1454,5 +1493,25 @@ ol {
 
   .posts {
     padding-top: 20px;
+  }
+
+  .banner {
+    max-width: 100%;
+  }
+
+  .banner__wrapper {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .banner__wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .banner__wrapper .button {
+    width: 100%;
   }
 }
