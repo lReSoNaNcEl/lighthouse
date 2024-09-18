@@ -357,6 +357,7 @@ ol {
 }
 
 .search__address {
+  display: flex;
   position: relative;
 }
 
