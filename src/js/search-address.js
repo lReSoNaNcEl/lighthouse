@@ -7,7 +7,6 @@ const CLOSE_ICON_ID = "address-close-icon";
 const tooltip = tippy(searchAddressIcon, {
   content: searchAddressContent.innerHTML,
   trigger: "click",
-  duration: 0,
   arrow: false,
   triggerTarget: [searchAddressIcon],
   placement: "top-end",
