@@ -2,7 +2,6 @@ const letters = [...document.querySelectorAll(".menu__letters span")];
 const cities = [...document.querySelectorAll(".menu__cities li")];
 const button = document.getElementById("menu-button");
 const menu = document.querySelector(".header__menu");
-const overlay = document.querySelector(".header__overlay");
 
 letters.forEach((letter) => {
   letter.addEventListener("click", () => {
@@ -19,28 +18,27 @@ letters.forEach((letter) => {
   });
 });
 
-const isOpenMenu = () =>
-  menu.classList.contains("active") && overlay.classList.contains("active");
+const isOpenMenu = () => menu.classList.contains("active") && isOpenOverlay();
 
 const closeMenu = () => {
-  document.body.style.overflow = "visible";
   menu.classList.remove("active");
-  overlay.classList.remove("active");
   button.classList.remove("active");
+  hideOverlay((_, hide) => {
+    hide();
+  });
 };
 
 const openMenu = () => {
-  document.body.style.overflow = "hidden";
   menu.classList.add("active");
-  overlay.classList.add("active");
   button.classList.add("active");
+  showOverlay((overlay) => {
+    overlay.addEventListener("click", closeMenu);
+  });
 };
 
 button.addEventListener("click", () =>
   isOpenMenu() ? closeMenu() : openMenu(),
 );
-
-overlay.addEventListener("click", closeMenu);
 
 window.addEventListener(
   "keyup",

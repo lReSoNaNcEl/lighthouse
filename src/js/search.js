@@ -3,37 +3,6 @@ const searchInput = document.getElementById("search-input");
 const searchCloseIcon = document.getElementById("search-close-icon");
 const searchResult = document.getElementById("search-result");
 
-function debounce(func, timeout = 300) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
-}
-
-const hideOnEsc = {
-  name: "hideOnEsc",
-  defaultValue: true,
-  fn: (instance) => {
-    const onKeyDown = (e) => {
-      if (e.keyCode === 27) {
-        instance.hide();
-        searchInput.blur();
-      }
-    };
-    return {
-      onShow: () => {
-        document.addEventListener("keydown", onKeyDown);
-      },
-      onHide: () => {
-        document.removeEventListener("keydown", onKeyDown);
-      },
-    };
-  },
-};
-
 const hideOnEmptyInput = {
   name: "hideOnEmptyInput",
   defaultValue: true,
@@ -104,6 +73,19 @@ const tooltipSearch = tippy(searchInput, {
   maxWidth: "none",
   theme: "custom",
   interactive: true,
+  onShow() {
+    showOverlay();
+
+    hideOverlay((overlay, hide) => {
+      overlay.addEventListener("click", hide);
+    });
+  },
+  onHide() {
+    hideOverlay((overlay, hide) => {
+      hide();
+      overlay.removeEventListener("click", hide);
+    });
+  },
   onClickOutside(instance) {
     instance.hide();
   },

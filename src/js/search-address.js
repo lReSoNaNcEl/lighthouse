@@ -1,5 +1,6 @@
 const searchAddressIcon = document.getElementById("search-address-icon");
 const searchAddressContent = document.getElementById("search-address-content");
+const overlay = document.getElementsByClassName("header__overlay")[0];
 // const cities = [...searchAddressContent.querySelectorAll(".menu__cities li")];
 
 const CLOSE_ICON_ID = "address-close-icon";
@@ -20,17 +21,29 @@ const tooltip = tippy(searchAddressIcon, {
     instance.popper
       .getElementsByTagName("input")[0]
       .addEventListener("input", searchCities);
+
+    showOverlay();
+
+    hideOverlay((overlay, hide) => {
+      overlay.addEventListener("click", hide);
+    });
   },
   onHide(instance) {
     instance.popper.removeEventListener("click", closeTooltip);
     instance.popper
       .getElementsByTagName("input")[0]
       .removeEventListener("input", searchCities);
+
+    hideOverlay((overlay, hide) => {
+      hide();
+      overlay.removeEventListener("click", hide);
+    });
   },
   onClickOutside(instance) {
     instance.hide();
   },
   offset: [0, -5],
+  plugins: [hideOnEsc],
 });
 
 const closeTooltip = (e) => {

@@ -12,7 +12,7 @@ if (isBrowserNotSupportDialog) {
   });
 }
 
-const triggers = [
+const modals = [
   {
     buttonId: "coin-gold",
     modalId: "modal-gold-coin",
@@ -35,9 +35,9 @@ const triggers = [
   },
 ];
 
-triggers.forEach((trigger) => {
-  const modal = document.getElementById(trigger.modalId);
-  const button = document.getElementById(trigger.buttonId);
+modals.forEach((item) => {
+  const modal = document.getElementById(item.modalId);
+  const button = document.getElementById(item.buttonId);
   const cross = modal.querySelector(".modal__cross");
 
   button.addEventListener("click", () => {
