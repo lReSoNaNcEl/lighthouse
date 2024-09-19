@@ -1,6 +1,5 @@
 const searchAddressIcon = document.getElementById("search-address-icon");
 const searchAddressContent = document.getElementById("search-address-content");
-const overlay = document.getElementsByClassName("header__overlay")[0];
 // const cities = [...searchAddressContent.querySelectorAll(".menu__cities li")];
 
 const CLOSE_ICON_ID = "address-close-icon";
