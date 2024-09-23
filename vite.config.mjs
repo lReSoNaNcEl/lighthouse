@@ -6,7 +6,7 @@ export default defineConfig({
     server: {
         port: 8080,
     },
-    publicDir: '',
+    publicDir: path.resolve('./src', 'public'),
     build: {
         manifest: true,
         outDir: '../dist',
