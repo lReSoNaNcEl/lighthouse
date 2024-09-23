@@ -30,8 +30,6 @@ self.addEventListener("install", (event) => {
       "/assets/copy.svg",
       "/assets/ground.svg",
       "/assets/lighthouse.png",
-      "/assets/lighthouse-coin.svg",
-      "/assets/lighthouse-small.png",
       "/assets/location.svg",
       "/assets/logo.svg",
       "/assets/mini-arrow.svg",
@@ -41,6 +39,8 @@ self.addEventListener("install", (event) => {
       "/assets/coin-silver.png",
       "/assets/coin-bronze.png",
       "/assets/coin-tree.png",
+      "/img/lighthouse-coin.svg",
+      "/img/lighthouse-small.png",
     ]),
   );
 });
