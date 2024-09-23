@@ -39,8 +39,8 @@ self.addEventListener("install", (event) => {
       "/assets/coin-silver.png",
       "/assets/coin-bronze.png",
       "/assets/coin-tree.png",
-      "/img/lighthouse-coin.svg",
-      "/img/lighthouse-small.png",
+      "/assets/lighthouse-coin.svg",
+      "/assets/lighthouse-small.png",
     ]),
   );
 });
