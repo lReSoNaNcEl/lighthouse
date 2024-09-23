@@ -15,7 +15,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
       "/",
-      "/index.css",
+      "/css/index.css",
       "/js/registerSW.js",
       "/js/interactive.js",
       "/js/modal.js",
