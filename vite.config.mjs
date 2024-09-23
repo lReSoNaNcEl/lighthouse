@@ -8,6 +8,7 @@ export default defineConfig({
     },
     publicDir: '',
     build: {
+        manifest: true,
         outDir: '../dist',
         emptyOutDir: true,
         rollupOptions: {
