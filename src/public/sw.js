@@ -14,7 +14,6 @@ const cacheFirst = async (request) => {
 self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
-      "/",
       "/css/index.css",
       "/js/registerSW.js",
       "/js/interactive.js",
@@ -26,7 +25,6 @@ self.addEventListener("install", (event) => {
       "/js/swiper.js",
       "/js/zoom.js",
       "/js/particles.js",
-      "/js/search.js",
       "/assets/call.svg",
       "/assets/chest.svg",
       "/assets/copy.svg",
