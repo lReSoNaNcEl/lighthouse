@@ -1013,6 +1013,7 @@ ol {
 
 .footer-layout {
   width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
@@ -1398,13 +1399,15 @@ ol {
   }
 
   .background__lighthouse {
+    width: 115vw;
     height: 400px;
-    background: url("/img/lighthouse-small.png") center/cover no-repeat;
+    background: url("/img/lighthouse-small.png") left/cover no-repeat;
     overflow: hidden;
   }
 
   .background__lighthouse.small {
     height: 250px;
+    object-position: center;
   }
 
   .footer__chest {
