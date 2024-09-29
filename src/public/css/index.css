@@ -1182,6 +1182,37 @@ ol {
   column-gap: 20px;
 }
 
+.city-banner-layout {
+  width: 100%;
+  margin-top: 45px;
+}
+
+.city-banners-slider {
+  width: 100%;
+  max-height: 215px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.city-banner {
+  display: flex;
+  background-color: var(--search-color);
+  border-radius: 30px;
+}
+
+.city-banner > img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: none;
+  border-radius: 30px;
+}
+
+.city-banner-img-mobile {
+  display: none;
+}
+
 @media only screen and (min-width: 1920px) {
   .background__lighthouse {
     background-position: top;
@@ -1446,6 +1477,7 @@ ol {
     top: 23px;
     right: 23px;
   }
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -1678,6 +1710,15 @@ ol {
 
   .banner__wrapper {
     justify-content: center;
+  }
+
+  .city-banner-img-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .city-banner-img-desktop {
+    display: none;
   }
 }
 
