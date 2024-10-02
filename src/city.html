@@ -751,6 +751,73 @@
 </header>
 
 <main class="background-layer">
+
+    <!-- Старт быстрых фильтров --->
+    <div class="fast-filters-layout container">
+        <div class="fast-filters">
+            <div class="buttons_slider">
+                <button class="arrow arrow-left filter-arrow-prev">
+                    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         data-testid="arrow-forward-ios">
+                        <path d="m1 1 6 5.5L1 12" stroke="currentColor" stroke-width="1.568"
+                              stroke-miterlimit="10"></path>
+                    </svg>
+                </button>
+                <div class="buttons_slider_wrapper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Спорт
+                                <img src="./assets/fast-filter-sport.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Еда
+                                <img src="./assets/fast-filter-food.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Красота
+                                <img src="./assets/fast-filter-beauty.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Отдых
+                                <img src="./assets/fast-filter-rest.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Здоровье
+                                <img src="./assets/fast-filter-health.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Здоровье
+                                <img src="./assets/fast-filter-health.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                        <li class="swiper-slide">
+                            <button class="filter_button fast-filters__button">Здоровье
+                                <img src="./assets/fast-filter-health.png" alt="фильтр"/>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <button class="arrow arrow-right filter-arrow-next">
+                    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         data-testid="arrow-forward-ios">
+                        <path d="m1 1 6 5.5L1 12" stroke="currentColor" stroke-width="1.568"
+                              stroke-miterlimit="10"></path>
+                    </svg>
+                </button>
+            </div>
+            <button class="filter_button view_all_button">
+                Смотреть всё
+            </button>
+        </div>
+
+    </div>
+    <!-- Конец быстрых фильтров --->
+
     <section class="posts container">
         <h2 class="title">Вы смотрели в Москве</h2>
 
@@ -980,23 +1047,50 @@
     </section>
 
     <!-- Старт слайдера-баннера --->
-    <section class="city-banner-layout container">
-        <div class="city-banners-slider">
+    <section class="adbanner container">
+        <div class="adbanner__slider">
             <div class="swiper-wrapper">
-                <div class="city-banner swiper-slide">
-                    <img class="city-banner-img-mobile" src="public/assets/cityBannerMobile.png"
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/nepogoda-motocross.png"
                          alt="Изображение баннера"/>
-                    <img class="city-banner-img-desktop" src="public/assets/cityBanner.png" alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/nepogoda-motocross-mobile.png"
+                         alt="Изображение баннера"/>
                 </div>
-                <div class="city-banner swiper-slide">
-                    <img class="city-banner-img-mobile" src="public/assets/cityBannerMobile.png"
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/motopowerslide.png"
                          alt="Изображение баннера"/>
-                    <img class="city-banner-img-desktop" src="public/assets/cityBanner.png" alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/motopowerslide-mobile.png"
+                         alt="Изображение баннера"/>
                 </div>
-                <div class="city-banner swiper-slide">
-                    <img class="city-banner-img-mobile" src="public/assets/cityBannerMobile.png"
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/banya.png"
                          alt="Изображение баннера"/>
-                    <img class="city-banner-img-desktop" src="public/assets/cityBanner.png" alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/banya-mobile.png"
+                         alt="Изображение баннера"/>
+                </div>
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/bodybuilding.png"
+                         alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/bodybuilding-mobile.png"
+                         alt="Изображение баннера"/>
+                </div>
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/kebab.png"
+                         alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/kebab-mobile.png"
+                         alt="Изображение баннера"/>
+                </div>
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/cultura.png"
+                         alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/cultura-mobile.png"
+                         alt="Изображение баннера"/>
+                </div>
+                <div class="adbanner__item swiper-slide">
+                    <img class="adbanner__img_desktop" src="./assets/backham.png"
+                         alt="Изображение баннера"/>
+                    <img class="adbanner__img_mobile" src="./assets/backham-mobile.png"
+                         alt="Изображение баннера"/>
                 </div>
             </div>
         </div>
@@ -1406,24 +1500,16 @@
         </button>
     </div>
 </div>
-
-<script src="https://mayak.app/js/swiper-bundle.min.js?ver=1"></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script
-        type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/toastify-js"
-></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 <script src="/js/interactive.js"></script>
 <script src="/js/app-banner.js"></script>
 <script src="/js/theme.js"></script>
-<script src="/js/swiper.js"></script>
-<script src="/js/zoom.js"></script>
-<script src="/js/toastify.js"></script>
-<script src="/js/particles.js"></script>
-<script src="/js/modal.js"></script>
+<script src="/js/category.js"></script>
 <script src="/js/registerSW.js"></script>
+<script src="https://mayak.app/js/swiper-bundle.min.js?ver=1"></script>
+<script src="/js/swiper/adBannersSwiper.js"></script>
+<script src="/js/swiper/fastFiltersSwiper.js"></script>
 </body>
 </html>
