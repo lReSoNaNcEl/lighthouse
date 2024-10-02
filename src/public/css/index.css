@@ -8,6 +8,7 @@
     --button-secondary: #f2f2f2;
     --button-secondary-active: #bfc8da;
     --button-secondary-hover: #dde2ec;
+
 }
 
 .dark-theme {
@@ -32,7 +33,8 @@
     --theme-switcher-color: #232637;
     --filter-button-bg: transparent;
     --filter-button-border-color: rgba(255, 255, 255, 0.3);
-    --view-all-button-bg: rgba(255, 255, 255, 0.20)
+    --view-all-button-bg: rgba(255, 255, 255, 0.20);
+    --swiper-pagination-bullet-inactive-color: #CCCCCC
 }
 
 .light-theme {
@@ -49,6 +51,7 @@
     --filter-button-bg: #F2F3F7;
     --filter-button-border-color: transparent;
     --view-all-button-bg: white;
+    --swiper-pagination-bullet-inactive-color:black
 }
 
 .dark-theme .menu__burger.active .burger__line {
@@ -785,6 +788,11 @@ ol {
     margin-top: 55px;
 }
 
+.card-swiper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .cards.column-3 {
     grid-template-columns: repeat(3, 1fr);
 }
@@ -797,7 +805,12 @@ ol {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     transition: 0.3s all;
+}
+
+.swiper-slide .card__img {
+    box-shadow: none;
 }
 
 .card__img {
@@ -811,6 +824,25 @@ ol {
 .card__img:hover {
     transform: translateY(-1px);
 }
+
+.card-images-swiper {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.card-images-swiper > a {
+    display: contents;
+}
+
+.card-images-swiper .card-images-pagination {
+    bottom: -15px;
+}
+
+.active-bullet {
+    opacity: 1;
+    background: var(--text-color);
+}
+
 
 .card__bonus {
     width: max-content;
@@ -1621,6 +1653,14 @@ body[class="dark-theme"] .view_all_button {
     .filter_button > img {
         width: 36px;
         height: 36px;
+    }
+
+    .card-images-pagination {
+        display: none;
+    }
+
+    .card-images-swiper {
+        margin-bottom: 0;
     }
 
 }
