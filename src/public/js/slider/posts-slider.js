@@ -7,6 +7,7 @@ const postsSwiper = new Swiper(".posts__cards__swiper", {
         nextEl: null,
         prevEl: null
     },
+    touchEventsTarget: 'container',
     breakpoints: {
         0: {
             loop: false,
