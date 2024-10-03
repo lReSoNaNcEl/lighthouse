@@ -1,4 +1,4 @@
-const fastFiltersSwiper = new Swiper(".buttons_slider_wrapper", {
+const categoriesSlider = new Swiper(".buttons__slider__wrapper", {
     grabCursor: true,
     breakpoints: {
         0: {
@@ -20,14 +20,14 @@ const fastFiltersSwiper = new Swiper(".buttons_slider_wrapper", {
     },
 });
 
-const prevArrow = document.querySelector('.filter-arrow-prev')
-const nextArrow = document.querySelector('.filter-arrow-next')
+const filtersPrevArrow = document.querySelector('.filter__arrow__prev')
+const filtersNextArrow = document.querySelector('.filter__arrow__next')
 
 
-nextArrow.addEventListener('click', () => {
-    fastFiltersSwiper.slideNext();
+filtersNextArrow.addEventListener('click', () => {
+    categoriesSlider.slideNext();
 });
 
-prevArrow.addEventListener('click', () => {
-    fastFiltersSwiper.slidePrev();
+filtersPrevArrow.addEventListener('click', () => {
+    categoriesSlider.slidePrev();
 });

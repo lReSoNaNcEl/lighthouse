@@ -1,14 +1,15 @@
 
-const cardSwipers = document.querySelectorAll('.card-images-swiper');
+const cardSwipers = document.querySelectorAll('.card__images__swiper');
 
 
 cardSwipers.forEach((swiperElement, index) => {
-    const paginationBullets = swiperElement.querySelector('.card-images-pagination')
+    const paginationBullets = swiperElement.querySelector('.card__images__pagination')
 
     const cardImagesSwiper = new Swiper(swiperElement, {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 0,
+        effect: 'fade',
         pagination: {
             el: paginationBullets,
             bulletActiveClass: 'active-bullet',
@@ -36,7 +37,7 @@ cardSwipers.forEach((swiperElement, index) => {
 
     cardImagesSwiper.autoplay.stop()
 
-    const cardImagesWrapper = swiperElement.querySelector('.card-images__wrapper');
+    const cardImagesWrapper = swiperElement.querySelector('.card__images__wrapper');
 
     cardImagesWrapper.addEventListener('mouseenter', () => {
         cardImagesSwiper.autoplay.start();
