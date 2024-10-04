@@ -28,12 +28,7 @@ cardSwipers.forEach((swiperElement, index) => {
             },
         },
     });
-
-    const disableLinkFollow = () => {
-        paginationBullets.addEventListener('onclick', (e) => e.stopPropagation())
-    }
-
-    disableLinkFollow()
+    
 
     cardImagesSwiper.autoplay.stop()
 

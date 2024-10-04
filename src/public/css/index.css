@@ -32,6 +32,7 @@
     --layout-categories-color: linear-gradient(#2d1d3c, #402036);
     --theme-switcher-color: #232637;
     --filter-button-bg: transparent;
+    --filter-button-hover: rgba(115,101,180, .3);
     --filter-button-border-color: rgba(255, 255, 255, 0.3);
     --view-all-button-bg: rgba(255, 255, 255, 0.20);
     --swiper-pagination-bullet-inactive-color: #CCCCCC;
@@ -51,6 +52,7 @@
     --theme-switcher-color: white;
     --filter-button-bg: #F2F3F7;
     --filter-button-border-color: transparent;
+    --filter-button-hover: rgba(43,46,53, .15);
     --view-all-button-bg: white;
     --swiper-pagination-bullet-inactive-color:black;
     --arrow-hover-bg: rgba(0,0,0, 0.2)
@@ -1278,7 +1280,7 @@ ol {
 }
 
 .buttons__slider {
-    max-width: 877px;
+    width: calc(100% - 160px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1314,7 +1316,8 @@ ol {
 }
 
 .category__img__wrapper > img {
-    object-fit: cover;
+    object-fit: contain;
+    box-shadow: none;
 }
 
 .buttons__slider__wrapper {
@@ -1336,14 +1339,29 @@ ol {
     border: 1px solid var(--filter-button-border-color);
 }
 
+.categories__button:hover {
+    background-color: var(--filter-button-hover);
+}
+
 .view__all__button {
     background-color: var(--view-all-button-bg);
     border: 1px solid rgba(194, 194, 194, 0.30);
+    flex-shrink: 0;
+}
+
+.view__all__button:hover {
+    background-color: var(--arrow-hover-bg);
+    border-color: var(--arrow-hover-bg);
+    cursor: pointer;
 }
 
 body[class="dark-theme"] .view__all__button {
   backdrop-filter: blur(8.5px);
   border-color: transparent;
+}
+
+.filter__arrow__prev {
+    visibility: hidden;
 }
 
 .arrow {
@@ -1407,7 +1425,8 @@ body[class="dark-theme"] .view__all__button {
     }
 
     .buttons__slider {
-        max-width: 750px;
+        max-width: 100%;
+        width: 100%;
     }
 
     .cards.small-sizes {
@@ -1563,7 +1582,6 @@ body[class="dark-theme"] .view__all__button {
     }
 
     .buttons__slider {
-        max-width: 80vw;
         min-width: 700px
     }
 }

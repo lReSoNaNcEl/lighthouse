@@ -6,11 +6,11 @@ const categoriesSlider = new Swiper(".buttons__slider__wrapper", {
             spaceBetween: 8
         },
         768: {
-            slidesPerView: 4,
+            slidesPerView: 'auto',
             spaceBetween: 8
         },
         1200: {
-            slidesPerView: 5,
+            slidesPerView: 'auto',
             spaceBetween: 14
         }
     },
@@ -22,6 +22,26 @@ const categoriesSlider = new Swiper(".buttons__slider__wrapper", {
 
 const filtersPrevArrow = document.querySelector('.filter__arrow__prev')
 const filtersNextArrow = document.querySelector('.filter__arrow__next')
+
+
+
+categoriesSlider.on('slideChange', (swiper) => {
+
+    if(swiper.isBeginning) {
+        filtersPrevArrow.style.visibility = 'hidden';
+    } else {
+        filtersPrevArrow.style.visibility = 'visible';
+    }
+
+    if (swiper.isEnd) {
+        filtersNextArrow.style.visibility = 'hidden';
+    } else {
+        filtersNextArrow.style.visibility = 'visible';
+    }
+})
+
+
+
 
 
 filtersNextArrow.addEventListener('click', () => {
