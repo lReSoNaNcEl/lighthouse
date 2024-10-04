@@ -1,4 +1,4 @@
-const categoriesSlider = new Swiper(".buttons__slider__wrapper", {
+const categorySlider = new Swiper(".buttons__slider__wrapper", {
     grabCursor: true,
     breakpoints: {
         0: {
@@ -24,30 +24,28 @@ const filtersPrevArrow = document.querySelector('.filter__arrow__prev')
 const filtersNextArrow = document.querySelector('.filter__arrow__next')
 
 
+categorySlider.on('reachEnd', () => {
+    filtersPrevArrow.style.visibility = 'visible';
+    filtersNextArrow.style.visibility = 'hidden';
+})
 
-categoriesSlider.on('slideChange', (swiper) => {
+categorySlider.on('reachBeginning', () => {
+    filtersPrevArrow.style.visibility = 'hidden';
+    filtersNextArrow.style.visibility = 'visible';
+})
 
-    if(swiper.isBeginning) {
-        filtersPrevArrow.style.visibility = 'hidden';
-    } else {
-        filtersPrevArrow.style.visibility = 'visible';
-    }
-
-    if (swiper.isEnd) {
-        filtersNextArrow.style.visibility = 'hidden';
-    } else {
-        filtersNextArrow.style.visibility = 'visible';
-    }
+categorySlider.on('fromEdge', () => {
+    filtersPrevArrow.style.visibility = 'visible';
+    filtersNextArrow.style.visibility = 'visible';
 })
 
 
 
 
-
 filtersNextArrow.addEventListener('click', () => {
-    categoriesSlider.slideNext();
+    categorySlider.slideNext();
 });
 
 filtersPrevArrow.addEventListener('click', () => {
-    categoriesSlider.slidePrev();
+    categorySlider.slidePrev();
 });
