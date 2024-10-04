@@ -58,6 +58,7 @@ cardSwipers.forEach((swiperElement, index) => {
     const cardImagesSwiper = new Swiper(swiperElement, swiperSettings);
 
     let currentZone = 0
+    let mouseLeaved = false
 
     const slidesAmount = cardImagesSwiper.slides.length
 
@@ -84,6 +85,11 @@ cardSwipers.forEach((swiperElement, index) => {
     }
 
     const debouncedMouseMove = throttle((e) => {
+        if (mouseLeaved) {
+            mouseLeaved = false
+            return
+        }
+
         if(e.target.tagName.toLowerCase() !== 'img') return
 
         const newZone = calculateCurrentZone(e.clientX)
@@ -97,6 +103,10 @@ cardSwipers.forEach((swiperElement, index) => {
 
     swiperElement.addEventListener('mousemove', debouncedMouseMove)
 
-    swiperElement.addEventListener('mouseleave', () => cardImagesSwiper.slideTo(0))
+    swiperElement.addEventListener('mouseleave', () => {
+        cardImagesSwiper.slideTo(0)
+        currentZone = 0
+        mouseLeaved = true
+    })
 
 });
