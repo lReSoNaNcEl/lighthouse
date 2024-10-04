@@ -1,4 +1,3 @@
-
 const cardSwipers = document.querySelectorAll('.card__images__swiper');
 
 const swiperSettings = {
@@ -54,11 +53,12 @@ function throttle(func, ms) {
     return wrapper;
 }
 
+const delay = 50
+
 cardSwipers.forEach((swiperElement, index) => {
     const cardImagesSwiper = new Swiper(swiperElement, swiperSettings);
 
     let currentZone = 0
-    let mouseLeaved = false
 
     const slidesAmount = cardImagesSwiper.slides.length
 
@@ -85,11 +85,6 @@ cardSwipers.forEach((swiperElement, index) => {
     }
 
     const debouncedMouseMove = throttle((e) => {
-        if (mouseLeaved) {
-            mouseLeaved = false
-            return
-        }
-
         if(e.target.tagName.toLowerCase() !== 'img') return
 
         const newZone = calculateCurrentZone(e.clientX)
@@ -98,15 +93,18 @@ cardSwipers.forEach((swiperElement, index) => {
         currentZone = newZone
 
         cardImagesSwiper.slideTo(newZone)
-    }, 50)
+    }, delay)
 
 
     swiperElement.addEventListener('mousemove', debouncedMouseMove)
 
-    swiperElement.addEventListener('mouseleave', () => {
-        cardImagesSwiper.slideTo(0)
-        currentZone = 0
-        mouseLeaved = true
-    })
+    function resetConditions() {
+        setTimeout(() => {
+            cardImagesSwiper.slideTo(0)
+            currentZone = 0
+        }, delay)
+    }
+
+    swiperElement.addEventListener('mouseleave', resetConditions)
 
 });
