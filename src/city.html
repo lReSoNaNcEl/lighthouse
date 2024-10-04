@@ -18,6 +18,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link href="https://fonts.cdnfonts.com/css/pt-root-ui" rel="stylesheet" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="canonical" href="https://mayak.app" />
@@ -747,6 +751,126 @@
     </header>
 
     <main class="background-layer">
+      <!-- Старт быстрых фильтров --->
+      <div class="filters-categories-layout container">
+        <div class="filters__categories">
+          <div class="buttons__slider">
+            <button class="arrow arrow__left filter__arrow__prev">
+              <svg
+                viewBox="0 0 8 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                data-testid="arrow-forward-ios"
+              >
+                <path
+                  d="m1 1 6 5.5L1 12"
+                  stroke="currentColor"
+                  stroke-width="1.568"
+                  stroke-miterlimit="10"
+                ></path>
+              </svg>
+            </button>
+            <div class="buttons__slider__wrapper">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Спорт
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-sport.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Еда
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-food.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Красота
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-beauty.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Отдых
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-rest.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Здоровье
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-health.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Здоровье
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-health.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="#"
+                    class="default__category__button categories__button"
+                    >Здоровье
+                    <div class="category__img__wrapper">
+                      <img src="./assets/fast-filter-health.png" alt="фильтр" />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button class="arrow arrow__right filter__arrow__next">
+              <svg
+                viewBox="0 0 8 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                data-testid="arrow-forward-ios"
+              >
+                <path
+                  d="m1 1 6 5.5L1 12"
+                  stroke="currentColor"
+                  stroke-width="1.568"
+                  stroke-miterlimit="10"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <a href="#" class="default__category__button view__all__button">
+            Смотреть всё
+          </a>
+        </div>
+      </div>
+      <!-- Конец быстрых фильтров --->
+
       <section class="posts container">
         <h2 class="title">Вы смотрели в Москве</h2>
 
@@ -899,19 +1023,47 @@
         </div>
       </section>
 
+      <!-- Старт секции со слайдерами картинок --->
       <section class="posts container">
         <h2 class="title">Вы смотрели в Москве</h2>
-
         <div class="cards">
           <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
+            <div class="card__images__swiper">
+              <div class="card__images__wrapper swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card-2.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination card__images__pagination"></div>
+            </div>
+
             <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
             <a href="#" class="card__title"
               >Студия рисования песком Песочница</a
@@ -922,15 +1074,43 @@
           </div>
 
           <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus green">🍑 бонус 20%</a>
+            <div class="card__images__swiper">
+              <div class="card__images__wrapper swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card-2.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination card__images__pagination"></div>
+            </div>
+
+            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
             <a href="#" class="card__title"
               >Студия рисования песком Песочница</a
             >
@@ -940,14 +1120,33 @@
           </div>
 
           <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
+            <div class="card__images__swiper">
+              <div class="card__images__wrapper swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card-2.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination card__images__pagination"></div>
+            </div>
+
+            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
             <a href="#" class="card__title"
               >Студия рисования песком Песочница</a
             >
@@ -957,14 +1156,43 @@
           </div>
 
           <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
+            <div class="card__images__swiper">
+              <div class="card__images__wrapper swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card-2.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination card__images__pagination"></div>
+            </div>
+
+            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
             <a href="#" class="card__title"
               >Студия рисования песком Песочница</a
             >
@@ -974,6 +1202,241 @@
           </div>
         </div>
       </section>
+      <!-- Конец секции со слайдерами картинок --->
+
+      <!-- Старт слайдера-баннера --->
+      <section class="adbanner container">
+        <div class="adbanner__slider">
+          <div class="swiper-wrapper">
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/nepogoda-motocross.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/nepogoda-motocross-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/motopowerslide.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/motopowerslide-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/banya.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/banya-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/bodybuilding.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/bodybuilding-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/kebab.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/kebab-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/cultura.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/cultura-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+            <div class="adbanner__item swiper-slide">
+              <img
+                class="adbanner__img__desktop"
+                src="./assets/backham.png"
+                alt="Изображение баннера"
+              />
+              <img
+                class="adbanner__img__mobile"
+                src="./assets/backham-mobile.png"
+                alt="Изображение баннера"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Конец слайдера-баннера --->
+
+      <!-- Старт слайдера постов --->
+      <section class="posts">
+        <h2 class="title container">Вы смотрели в Москве</h2>
+        <div class="posts__swiper__navigation container">
+          <button class="arrow arrow__left posts__arrow__prev">
+            <svg
+              viewBox="0 0 8 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              data-testid="arrow-forward-ios"
+            >
+              <path
+                d="m1 1 6 5.5L1 12"
+                stroke="currentColor"
+                stroke-width="1.568"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+          </button>
+          <div class="posts__cards__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
+                  <a href="#" class="card__title"
+                    >Студия рисования песком Песочница</a
+                  >
+                  <a href="#" class="card__description">Детям в Астрахани</a>
+                  <a class="card__tag" href="#"> Kids Club </a>
+                  <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
+                  <a href="#" class="card__title"
+                    >Студия рисования песком Песочница</a
+                  >
+                  <a href="#" class="card__description">Детям в Астрахани</a>
+                  <a class="card__tag" href="#"> Kids Club </a>
+                  <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
+                  <a href="#" class="card__title"
+                    >Студия рисования песком Песочница</a
+                  >
+                  <a href="#" class="card__description">Детям в Астрахани</a>
+                  <a class="card__tag" href="#"> Kids Club </a>
+                  <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
+                  <a href="#" class="card__title"
+                    >Студия рисования песком Песочница</a
+                  >
+                  <a href="#" class="card__description">Детям в Астрахани</a>
+                  <a class="card__tag" href="#"> Kids Club </a>
+                  <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      class="card__img"
+                      src="/assets/card.png"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
+                  <a href="#" class="card__title"
+                    >Студия рисования песком Песочница</a
+                  >
+                  <a href="#" class="card__description">Детям в Астрахани</a>
+                  <a class="card__tag" href="#"> Kids Club </a>
+                  <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="arrow arrow__right posts__arrow__next">
+            <svg
+              viewBox="0 0 8 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              data-testid="arrow-forward-ios"
+            >
+              <path
+                d="m1 1 6 5.5L1 12"
+                stroke="currentColor"
+                stroke-width="1.568"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <!-- Конец слайдера постов --->
 
       <section class="posts container">
         <h2 class="title">Вы смотрели в Москве</h2>
@@ -1082,20 +1545,12 @@
 
           <a class="categories__item" href="#">
             <div class="categories__title">Животные</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/dog.png"
-            />
+            <img loading="lazy" class="categories__img" src="/assets/dog.png" />
           </a>
 
           <a class="categories__item" href="#">
             <div class="categories__title">Авто</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/car.png"
-            />
+            <img loading="lazy" class="categories__img" src="/assets/car.png" />
           </a>
 
           <a class="categories__item" href="#">
@@ -1307,11 +1762,7 @@
 
           <a class="categories__item" href="#">
             <div class="categories__title">Охота</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/elk.png"
-            />
+            <img loading="lazy" class="categories__img" src="/assets/elk.png" />
           </a>
 
           <a class="categories__item" href="#">
@@ -1325,11 +1776,7 @@
 
           <a class="categories__item" href="#">
             <div class="categories__title">Дружить</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/man.png"
-            />
+            <img loading="lazy" class="categories__img" src="/assets/man.png" />
           </a>
 
           <a class="categories__item" href="#">
@@ -1378,7 +1825,6 @@
         </button>
       </div>
     </div>
-
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
@@ -1387,5 +1833,10 @@
     <script src="/js/theme.js"></script>
     <script src="/js/category.js"></script>
     <script src="/js/registerSW.js"></script>
+    <script src="https://mayak.app/js/swiper-bundle.min.js?ver=1"></script>
+    <script src="/js/slider/adbanner-slider.js"></script>
+    <script src="/js/slider/card-slider.js"></script>
+    <script src="/js/slider/category-slider.js"></script>
+    <script src="/js/slider/post-slider.js"></script>
   </body>
 </html>
