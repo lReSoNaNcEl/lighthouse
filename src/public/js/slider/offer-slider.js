@@ -6,5 +6,3 @@ new Swiper(".swiper", {
   },
   effect: "cards",
 });
-
-
