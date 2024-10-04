@@ -101,18 +101,6 @@
 
         swiperElement.addEventListener('mousemove', debouncedMouseMove)
 
-        function resetConditions(e) {
-            const itsCard = e.relatedTarget.classList.contains('card')
-
-            if (itsCard) return
-
-            setTimeout(() => {
-                cardImagesSwiper.slideTo(0)
-                currentZone = 0
-            }, delay)
-        }
-
-        swiperElement.addEventListener('mouseleave', resetConditions)
 
     });
 
