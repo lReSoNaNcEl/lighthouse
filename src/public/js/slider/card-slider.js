@@ -79,6 +79,7 @@
             return zones;
         }
 
+
         const containerZones = calculateZonesRestrictions()
 
         function calculateCurrentZone(clientX) {
@@ -100,7 +101,11 @@
 
         swiperElement.addEventListener('mousemove', debouncedMouseMove)
 
-        function resetConditions() {
+        function resetConditions(e) {
+            const itsCard = e.relatedTarget.classList.contains('card')
+
+            if (itsCard) return
+
             setTimeout(() => {
                 cardImagesSwiper.slideTo(0)
                 currentZone = 0
