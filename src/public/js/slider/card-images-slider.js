@@ -1,44 +1,102 @@
 
 const cardSwipers = document.querySelectorAll('.card__images__swiper');
 
+const swiperSettings = {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    effect: 'fade',
+    pagination: {
+        el: '.card__images__pagination',
+        bulletActiveClass: 'active-bullet',
+        clickable: true
+    },
+    breakpoints: {
+        0: {
+            loop: false,
+        },
+        768: {
+            slidesPerView: 1,
+        },
+    },
+}
+
+function inBetween(target, a, b) {
+    return target >= a && target <= b;
+}
+
+function throttle(func, ms) {
+
+    let isThrottled = false,
+        savedArgs,
+        savedThis;
+
+    function wrapper() {
+
+        if (isThrottled) {
+            savedArgs = arguments;
+            savedThis = this;
+            return;
+        }
+
+        func.apply(this, arguments);
+
+        isThrottled = true;
+
+        setTimeout(function() {
+            isThrottled = false;
+            if (savedArgs) {
+                wrapper.apply(savedThis, savedArgs);
+                savedArgs = savedThis = null;
+            }
+        }, ms);
+    }
+
+    return wrapper;
+}
 
 cardSwipers.forEach((swiperElement, index) => {
-    const paginationBullets = swiperElement.querySelector('.card__images__pagination')
+    const cardImagesSwiper = new Swiper(swiperElement, swiperSettings);
 
-    const cardImagesSwiper = new Swiper(swiperElement, {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        effect: 'fade',
-        pagination: {
-            el: paginationBullets,
-            bulletActiveClass: 'active-bullet',
-            clickable: true
-        },
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            0: {
-                loop: false,
-            },
-            768: {
-                slidesPerView: 1,
-            },
-        },
-    });
-    
+    let currentZone = 0
 
-    cardImagesSwiper.autoplay.stop()
+    const slidesAmount = cardImagesSwiper.slides.length
 
-    const cardImagesWrapper = swiperElement.querySelector('.card__images__wrapper');
+    const containerBounds = swiperElement.getBoundingClientRect()
 
-    cardImagesWrapper.addEventListener('mouseenter', () => {
-        cardImagesSwiper.autoplay.start();
-    });
+    function calculateZonesRestrictions() {
+        const zoneWidth = containerBounds.width / slidesAmount;
+        let zones = [];
 
-    cardImagesWrapper.addEventListener('mouseleave', () => {
-        cardImagesSwiper.autoplay.stop();
-    });
+        for (let i = 0; i < slidesAmount; i++) {
+            const start = i * zoneWidth + containerBounds.x;
+            const end = start + zoneWidth;
+            zones.push({ start, end });
+        }
+
+        return zones;
+    }
+
+    const containerZones = calculateZonesRestrictions()
+
+    function calculateCurrentZone(clientX) {
+
+        return containerZones.findIndex(zone => inBetween(clientX, zone.start, zone.end));
+    }
+
+    const debouncedMouseMove = throttle((e) => {
+        if(e.target.tagName.toLowerCase() !== 'img') return
+
+        const newZone = calculateCurrentZone(e.clientX)
+        if (newZone === currentZone) return
+
+        currentZone = newZone
+
+        cardImagesSwiper.slideTo(newZone)
+    }, 50)
+
+
+    swiperElement.addEventListener('mousemove', debouncedMouseMove)
+
+    swiperElement.addEventListener('mouseleave', () => cardImagesSwiper.slideTo(0))
+
 });
