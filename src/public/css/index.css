@@ -821,6 +821,7 @@ ol {
 
 .swiper-slide .card__img {
     box-shadow: none;
+    max-height: 225px;
 }
 
 .card__img {
