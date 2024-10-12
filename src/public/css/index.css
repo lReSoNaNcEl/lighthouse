@@ -92,6 +92,10 @@
   border: 1px solid white;
 }
 
+.dark-theme .background__lighthouse {
+  display: block;
+}
+
 .dark-theme .footer {
   display: none;
 }
@@ -129,10 +133,6 @@
 }
 
 .light-theme #particles-js {
-  display: none;
-}
-
-.light-theme .background__lighthouse {
   display: none;
 }
 
@@ -1275,6 +1275,7 @@ ol {
 }
 
 .background__lighthouse {
+  display: none;
   width: 100%;
   height: 1036px;
   background: url("/assets/lighthouse.png") center/cover no-repeat;
