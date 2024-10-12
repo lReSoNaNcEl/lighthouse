@@ -761,7 +761,16 @@ ol {
 
 .title {
   font-size: 60px;
+  line-height: 48px;
   color: var(--text-color);
+}
+
+.description {
+  max-width: 90%;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--text-color);
+  margin-top: 24px;
 }
 
 .chip {
@@ -1727,6 +1736,13 @@ ol {
 }
 
 @media only screen and (max-width: 768px) {
+  .description {
+    max-width: none;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 12px;
+  }
+
   .header__search.focused {
     position: absolute;
     top: 12px;
@@ -2008,6 +2024,7 @@ ol {
 
   .title {
     font-size: 30px;
+    line-height: 36px;
   }
 
   .chip {
