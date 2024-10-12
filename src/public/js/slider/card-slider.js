@@ -26,8 +26,8 @@ function inBetween(target, a, b) {
 
 function throttle(func, ms) {
   let isThrottled = false,
-      savedArgs,
-      savedThis;
+    savedArgs,
+    savedThis;
 
   function wrapper() {
     if (isThrottled) {
@@ -80,7 +80,7 @@ slidersOfCards.forEach((swiperElement) => {
 
   function calculateCurrentZone(clientX) {
     return containerZones.findIndex((zone) =>
-        inBetween(clientX, zone.start, zone.end),
+      inBetween(clientX, zone.start, zone.end),
     );
   }
 

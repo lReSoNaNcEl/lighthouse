@@ -119,8 +119,8 @@ const hideOnEmptyInput = {
       const data = await loadData();
 
       e.target.value
-        ? (searchCloseIcon.style.display = "block")
-        : (searchCloseIcon.style.display = "none");
+        ? searchCloseIcon.classList.remove("hidden")
+        : searchCloseIcon.classList.add("hidden");
 
       if (!data?.length) {
         return;
@@ -199,7 +199,7 @@ searchInput.addEventListener("focus", () => {
 
 searchCloseIcon.addEventListener("click", () => {
   searchInput.value = "";
-  searchCloseIcon.style.display = "none";
+  searchCloseIcon.classList.add("hidden");
   tooltipSearch.disable();
 });
 

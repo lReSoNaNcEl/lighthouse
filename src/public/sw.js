@@ -20,6 +20,7 @@ self.addEventListener("install", (event) => {
       "/js/modal.js",
       "/js/toastify.js",
       "/js/category.js",
+      "/js/post.js",
       "/js/app-banner.js",
       "/js/theme.js",
       "/js/slider/offer-slider.js",

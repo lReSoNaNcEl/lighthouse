@@ -11,7 +11,6 @@ const writeBannerToCookie = () =>
 
 const closeBanner = () => {
   banner.classList.remove("show");
-  banner.classList.add("closed");
 };
 
 downloadButton.addEventListener("click", () => {
