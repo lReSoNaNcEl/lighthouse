@@ -16,6 +16,7 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     thumbs: {
         swiper: thumbsSwiper,
     },
+    allowTouchMove: false,
     mousewheel: true,
     breakpoints: {
         0: {
@@ -23,8 +24,16 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
             slidesPerView: 1,
             spaceBetween: 20,
             freeMode: false,
+            allowTouchMove: true,
             direction: "horizontal",
-            mousewheel: false
+            mousewheel: false,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            scrollbar: {
+                el: undefined,
+            },
         },
         992: {},
     },

@@ -13,7 +13,7 @@ introSlider.addEventListener('click', () => {
 galleryCloseButton.addEventListener('click', () => {
     galleryModal.classList.toggle('hidden')
     galleryModal.classList.toggle('show')
-    document.querySelector('.intro-layout').style.zIndex = undefined
+    document.querySelector('.intro-layout').style.zIndex = 'inherit'
     document.documentElement.style.overflow = "auto"
 
     offerSlider.slideTo(gallerySwiper.activeIndex)
