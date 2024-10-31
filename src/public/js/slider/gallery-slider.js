@@ -4,6 +4,7 @@ const thumbsSwiper = new Swiper(".thumbs__swiper", {
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
+    watchSlidesVisibility: true,
 });
 
 const gallerySwiper = new Swiper(".gallery__swiper", {
@@ -38,4 +39,13 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
         },
         992: {},
     },
+});
+
+
+gallerySwiper.on('reachEnd', () => {
+    const lastIndex = gallerySwiper.slides.length - 1
+
+    thumbsSwiper.slideTo(lastIndex)
+    thumbsSwiper.slides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
+    thumbsSwiper.slides[lastIndex].classList.add('swiper-slide-thumb-active');
 });

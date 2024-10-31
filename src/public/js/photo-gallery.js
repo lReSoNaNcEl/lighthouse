@@ -12,7 +12,6 @@ function show() {
     document.documentElement.style.overflow = "hidden"
 
     galleryModal.focus()
-
 }
 
 function hide() {
