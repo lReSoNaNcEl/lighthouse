@@ -41,11 +41,50 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     },
 });
 
+let prevProgress
+let reachEnd
 
-gallerySwiper.on('reachEnd', () => {
-    const lastIndex = gallerySwiper.slides.length - 1
+const lastIndex = gallerySwiper.slides.length - 1
 
-    thumbsSwiper.slideTo(lastIndex)
-    thumbsSwiper.slides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
-    thumbsSwiper.slides[lastIndex].classList.add('swiper-slide-thumb-active');
+
+thumbsSwiper.on('click', (swiper, event) => {
+    const clickedSlide = swiper.clickedSlide; // Получаем кликнутый слайд
+
+    const index = swiper.slides.indexOf(clickedSlide)
+    
+    if (index === lastIndex) {
+        removeActiveClasses()
+        setActiveSlide(index)
+    }
 });
+
+gallerySwiper.on('scroll', (swiper) => {
+    const currentProgress = swiper.progress
+
+
+    if (currentProgress === 1) {
+        removeActiveClasses()
+        setActiveSlide(lastIndex)
+
+        reachEnd = true
+    }
+
+    if (reachEnd && currentProgress < prevProgress) {
+        removeActiveClasses()
+        setActiveSlide(lastIndex - 1)
+
+        reachEnd = false
+    }
+
+    prevProgress = currentProgress
+
+});
+
+function setActiveSlide(index) {
+    thumbsSwiper.slideTo(lastIndex)
+    thumbsSwiper.slides[index].classList.add('swiper-slide-thumb-active');
+}
+
+function removeActiveClasses() {
+    thumbsSwiper.slides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
+}
