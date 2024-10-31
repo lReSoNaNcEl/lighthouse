@@ -12,6 +12,7 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     freeMode: true,
     scrollbar: {
         el: ".swiper-scrollbar",
+        draggable: true
     },
     thumbs: {
         swiper: thumbsSwiper,

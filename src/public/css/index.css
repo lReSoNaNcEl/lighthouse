@@ -1540,7 +1540,6 @@ ol {
   justify-content: center;
   z-index: 99999;
   transform: translateZ(0);
-
 }
 
 .gallery__modal.hidden {
@@ -1549,7 +1548,7 @@ ol {
 
 .gallery__modal.show {
   display: flex;
-  animation: fadeInUp .3s ease-in-out;
+  animation: fadeIn .3s ease-in-out;
 }
 
 .gallery__close {
@@ -1562,10 +1561,11 @@ ol {
   border-radius: 10px;
   padding: 10px;
   z-index: 2;
+  background-color: #F0F0F0;
 }
 
 .gallery__close:hover {
-  background-color: rgba(0, 0, 0, .2);
+  background-color: #B6B6B6;
 }
 
 .gallery__close svg {
@@ -1587,8 +1587,9 @@ ol {
   position: relative;
   height: max-content;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  column-gap: 30px;
   margin-top: 40px;
 }
 
@@ -1603,9 +1604,6 @@ ol {
 
 .slide__description {
   max-width: 400px;
-  position: absolute;
-  right: 15px;
-  bottom: 0;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -1629,6 +1627,15 @@ ol {
   padding: 4px;
   height: 100%;
   object-fit: cover;
+}
+
+.thumbs__swiper .swiper-slide {
+  border: 2px solid transparent;
+  transition: .2s border-color ease-in-out;
+}
+
+.thumbs__swiper .swiper-slide:hover {
+  border: 2px solid #595959;
 }
 
 .thumbs__swiper .swiper-slide-thumb-active {
@@ -1658,6 +1665,13 @@ ol {
   .background__lighthouse {
     background-position: top;
     bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 1480px) {
+  .gallery__swiper .swiper-slide {
+    justify-content: right;
+    padding-right: 15px;
   }
 }
 
@@ -1698,6 +1712,7 @@ ol {
     top: 165px;
     z-index: 1;
   }
+
 
   .intro__coins {
     bottom: -90px;
@@ -1845,6 +1860,7 @@ ol {
     height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: column;
     row-gap: 10px;
     overflow: auto;
