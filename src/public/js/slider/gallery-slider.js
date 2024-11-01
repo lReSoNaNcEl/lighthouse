@@ -3,12 +3,9 @@ const thumbsSwiper = new Swiper(".thumbs__swiper", {
     direction: "vertical",
     slidesPerView: 6,
     freeMode: true,
-    cssMode: {
-        speed: 1200
-    },
+    mousewheel: true,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
-    mousewheel: true,
 });
 
 const gallerySwiper = new Swiper(".gallery__swiper", {
@@ -23,9 +20,9 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
         swiper: thumbsSwiper,
     },
     allowTouchMove: false,
-    mousewheel: true,
-    cssMode: {
-        speed: 1200
+    speed: 400,
+    mousewheel: {
+        sensitivity: 0.65
     },
     breakpoints: {
         0: {
@@ -42,7 +39,7 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
             },
             scrollbar: {
                 el: undefined,
-            },
+            }
         },
         992: {},
     },
@@ -61,7 +58,7 @@ gallerySwiper.on('progress', (swiper) => {
 })
 
 function setActiveSlide(index) {
-    thumbsSwiper.slides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
+    thumbsSwiper.slides.forEach(slide => slide?.classList.remove('swiper-slide-thumb-active'));
     thumbsSwiper.slideTo(index)
-    thumbsSwiper.slides[index].classList.add('swiper-slide-thumb-active');
+    thumbsSwiper.slides[index]?.classList.add('swiper-slide-thumb-active');
 }
