@@ -58,7 +58,6 @@ gallerySwiper.on('progress', (swiper) => {
 })
 
 function setActiveSlide(index) {
-    console.log(thumbsSwiper)
     thumbsSwiper.slides.forEach(slide => slide?.classList.remove('swiper-slide-thumb-active'));
     thumbsSwiper.slideTo(index)
     thumbsSwiper.slides[index]?.classList.add('swiper-slide-thumb-active');
