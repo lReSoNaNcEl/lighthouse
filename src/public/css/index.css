@@ -1585,6 +1585,7 @@ ol {
 
 .gallery__swiper .swiper-wrapper {
     cursor: auto;
+    z-index: 1;
 }
 
 .gallery__swiper .swiper-slide {
@@ -1619,6 +1620,7 @@ ol {
     background-color: rgba(255, 255, 255, .3);
     backdrop-filter: blur(2px);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+    z-index: 2;
 }
 
 .thumbs__swiper {
@@ -1679,7 +1681,7 @@ ol {
 @media only screen and (max-width: 1440px) {
 
     .gallery__swiper .swiper-slide {
-        margin-left: -10vw;
+        margin-left: -12vw;
     }
 
     .gallery__swiper .swiper-slide img {
@@ -1702,7 +1704,7 @@ ol {
     }
 
     .gallery__swiper .swiper-slide {
-        width: calc(100% - 160px);
+        width: calc(100% - 170px);
         justify-content: center;
         margin: 20px 20px 0 auto;
     }
@@ -1837,6 +1839,10 @@ ol {
 
     .gallery__description {
         max-width: 100%;
+    }
+
+    .thumbs__swiper {
+        left: 15px;
     }
 
     .gallery__grid--3 {
