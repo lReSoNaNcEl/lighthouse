@@ -2375,6 +2375,15 @@ ol {
         left: 50%;
         transform: translateY(-50%);
     }
+    .gallery__swiper .swiper-slide:before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        background-color: black;
+        transform: translateX(20px);
+    }
 }
 
 @media only screen and (max-width: 375px) {
