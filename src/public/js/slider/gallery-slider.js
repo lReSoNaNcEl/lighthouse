@@ -3,7 +3,7 @@ const thumbsSwiper = new Swiper(".thumbs__swiper", {
     direction: "vertical",
     slidesPerView: 6,
     freeMode: true,
-
+    mousewheel: true,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
 });
