@@ -1,10 +1,14 @@
 const thumbsSwiper = new Swiper(".thumbs__swiper", {
     spaceBetween: 15,
     direction: "vertical",
-    slidesPerView: 4,
+    slidesPerView: 6,
     freeMode: true,
+    cssMode: {
+        speed: 1200
+    },
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
+    mousewheel: true,
 });
 
 const gallerySwiper = new Swiper(".gallery__swiper", {
@@ -20,6 +24,9 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     },
     allowTouchMove: false,
     mousewheel: true,
+    cssMode: {
+        speed: 1200
+    },
     breakpoints: {
         0: {
             loop: true,

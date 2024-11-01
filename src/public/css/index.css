@@ -1599,7 +1599,7 @@ ol {
 
 .gallery__swiper .swiper-slide img {
     height: auto;
-    width: 40vw;
+    width: 600px;
 }
 
 .gallery__swiper .swiper-slide:last-child {
@@ -1633,6 +1633,7 @@ ol {
 .thumbs__swiper img {
     padding: 4px;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -1677,7 +1678,7 @@ ol {
 
 @media only screen and (max-width: 1440px) {
     .slide__description {
-        max-width: 40vw;
+        max-width: 600px;
         position: relative;
         right: 0;
         border-top-right-radius: 0;
