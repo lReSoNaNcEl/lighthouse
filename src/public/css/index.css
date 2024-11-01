@@ -1531,7 +1531,6 @@ ol {
 }
 
 .gallery__modal {
-    width: 100dvw;
     position: fixed;
     inset: 0;
     z-index: 99999;
