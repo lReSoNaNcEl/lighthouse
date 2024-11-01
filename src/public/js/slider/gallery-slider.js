@@ -13,7 +13,7 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     freeMode: true,
     scrollbar: {
         el: ".swiper-scrollbar",
-        draggable: true
+        draggable: true,
     },
     thumbs: {
         swiper: thumbsSwiper,
@@ -41,50 +41,20 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     },
 });
 
-let prevProgress
-let reachEnd
 
-const lastIndex = gallerySwiper.slides.length - 1
-
-
-thumbsSwiper.on('click', (swiper, event) => {
-    const clickedSlide = swiper.clickedSlide; // Получаем кликнутый слайд
-
+thumbsSwiper.on('click', (swiper) => {
+    const clickedSlide = swiper.clickedSlide;
     const index = swiper.slides.indexOf(clickedSlide)
-    
-    if (index === lastIndex) {
-        removeActiveClasses()
-        setActiveSlide(index)
-    }
+
+    setActiveSlide(index)
 });
 
-gallerySwiper.on('scroll', (swiper) => {
-    const currentProgress = swiper.progress
-
-
-    if (currentProgress === 1) {
-        removeActiveClasses()
-        setActiveSlide(lastIndex)
-
-        reachEnd = true
-    }
-
-    if (reachEnd && currentProgress < prevProgress) {
-        removeActiveClasses()
-        setActiveSlide(lastIndex - 1)
-
-        reachEnd = false
-    }
-
-    prevProgress = currentProgress
-
-});
+gallerySwiper.on('progress', (swiper) => {
+    setActiveSlide(swiper.snapIndex);
+})
 
 function setActiveSlide(index) {
-    thumbsSwiper.slideTo(lastIndex)
-    thumbsSwiper.slides[index].classList.add('swiper-slide-thumb-active');
-}
-
-function removeActiveClasses() {
     thumbsSwiper.slides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
+    thumbsSwiper.slideTo(index)
+    thumbsSwiper.slides[index].classList.add('swiper-slide-thumb-active');
 }

@@ -23,7 +23,6 @@ self.addEventListener("install", (event) => {
       "/js/post.js",
       "/js/app-banner.js",
       "/js/theme.js",
-      "/js/photo-gallery.js",
       "/js/slider/offer-slider.js",
       "/js/slider/card-slider.js",
       "/js/slider/adbanner-slider.js",
