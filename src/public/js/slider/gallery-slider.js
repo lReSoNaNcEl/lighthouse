@@ -3,7 +3,9 @@ const thumbsSwiper = new Swiper(".thumbs__swiper", {
     direction: "vertical",
     slidesPerView: 6,
     freeMode: true,
-    speed: 400,
+    cssMode: {
+        speed: 1200
+    },
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     mousewheel: true,
