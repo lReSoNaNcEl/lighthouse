@@ -1633,6 +1633,7 @@ ol {
 .thumbs__swiper img {
     padding: 4px;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
