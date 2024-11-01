@@ -28,6 +28,8 @@ self.addEventListener("install", (event) => {
       "/js/slider/adbanner-slider.js",
       "/js/slider/post-slider.js",
       "/js/slider/category-slider.js",
+      "/js/slider/offer-slider.js",
+      "/js/slider/gallery-slider.js",
       "/js/zoom.js",
       "/js/particles.js",
       "/assets/call.svg",
