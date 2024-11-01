@@ -1,7 +1,7 @@
 const thumbsSwiper = new Swiper(".thumbs__swiper", {
     spaceBetween: 15,
     direction: "vertical",
-    slidesPerView: 6,
+    slidesPerView: 9,
     freeMode: true,
     mousewheel: true,
     watchSlidesProgress: true,
@@ -36,12 +36,13 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
             pagination: {
                 el: ".swiper-pagination",
                 type: "fraction",
+                modifierClass: 'gallery__pagination__'
             },
             scrollbar: {
                 el: undefined,
             }
         },
-        992: {},
+        480: {},
     },
 });
 
