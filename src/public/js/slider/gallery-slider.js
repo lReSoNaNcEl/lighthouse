@@ -1,35 +1,27 @@
 const thumbsSwiper = new Swiper(".thumbs__swiper", {
     spaceBetween: 15,
     direction: "vertical",
-    slidesPerView: 9,
+    slidesPerView: 'auto',
     freeMode: true,
     mousewheel: true,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     breakpoints: {
         0: {
-            slidesPerView: 6,
+            slidesPerView: 'auto',
         },
-        992: {},
+        992: {
+            slidesPerView: 'auto',
+        },
     }
 });
 
-const gallerySwiper = new Swiper(".gallery__swiper", {
-    direction: "vertical",
-    slidesPerView: "auto",
-    freeMode: true,
-    scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-    },
-    thumbs: {
-        swiper: thumbsSwiper,
-    },
-    allowTouchMove: false,
-    speed: 400,
+const gallerySwiperOptions = {
     mousewheel: {
         sensitivity: 0.65
     },
+    allowTouchMove: true,
+    freeMode: true,
     breakpoints: {
         0: {
             loop: true,
@@ -51,8 +43,6 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
         480: {
             direction: "vertical",
             slidesPerView: "auto",
-            freeMode: true,
-            spaceBetween: 20,
             scrollbar: {
                 el: ".swiper-scrollbar",
                 draggable: true,
@@ -60,12 +50,12 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
             thumbs: {
                 swiper: thumbsSwiper,
             },
-            allowTouchMove: true,
             speed: 400,
-        },
-        992: {}
+        }
     },
-});
+}
+
+let gallerySwiper = new Swiper(".gallery__swiper", gallerySwiperOptions);
 
 
 thumbsSwiper.on('click', (swiper) => {
@@ -76,8 +66,6 @@ thumbsSwiper.on('click', (swiper) => {
 });
 
 gallerySwiper.on('progress', (swiper) => {
-    if (window.innerWidth < 992) return
-
     setActiveSlide(swiper.snapIndex);
 })
 
