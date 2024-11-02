@@ -48,7 +48,21 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
                 el: undefined,
             }
         },
-        480: {},
+        480: {
+            direction: "vertical",
+            slidesPerView: "auto",
+            freeMode: true,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                draggable: true,
+            },
+            thumbs: {
+                swiper: thumbsSwiper,
+            },
+            allowTouchMove: true,
+            speed: 400,
+        },
+        992: {}
     },
 });
 
@@ -61,8 +75,12 @@ thumbsSwiper.on('click', (swiper) => {
 });
 
 gallerySwiper.on('progress', (swiper) => {
+    if (window.innerWidth < 992) return
+
     setActiveSlide(swiper.snapIndex);
 })
+
+
 
 function setActiveSlide(index) {
     thumbsSwiper.slides.forEach(slide => slide?.classList.remove('swiper-slide-thumb-active'));
