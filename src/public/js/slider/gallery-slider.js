@@ -35,6 +35,7 @@ const gallerySwiperOptions = {
             allowTouchMove: true,
             direction: "horizontal",
             mousewheel: false,
+            zoom: true,
             pagination: {
                 el: ".swiper-pagination",
                 type: "fraction",
