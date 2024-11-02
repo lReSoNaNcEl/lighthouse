@@ -6,6 +6,12 @@ const thumbsSwiper = new Swiper(".thumbs__swiper", {
     mousewheel: true,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 6,
+        },
+        992: {},
+    }
 });
 
 const gallerySwiper = new Swiper(".gallery__swiper", {
