@@ -51,7 +51,7 @@ const gallerySwiperOptions = {
                 el: ".swiper-scrollbar",
                 draggable: true,
             },
-
+            zoom: false,
             speed: 400,
         }
     },
