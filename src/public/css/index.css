@@ -1894,6 +1894,7 @@ ol {
     }
 
     .gallery__close {
+        top: 10px;
         right: 15px;
     }
 
