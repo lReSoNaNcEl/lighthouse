@@ -52,6 +52,7 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
             direction: "vertical",
             slidesPerView: "auto",
             freeMode: true,
+            spaceBetween: 20,
             scrollbar: {
                 el: ".swiper-scrollbar",
                 draggable: true,

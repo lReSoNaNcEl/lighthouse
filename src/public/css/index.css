@@ -1636,7 +1636,7 @@ ol {
     padding: 4px;
     height: 100%;
     width: 100%;
-    min-width: 100px;
+    min-width: 80px;
     object-fit: scale-down;
     background-color: white;
 }
@@ -1815,6 +1815,10 @@ ol {
         font-size: 24px;
     }
 
+    .gallery__swiper .swiper-slide {
+        margin-top: 10px;
+    }
+
     .gallery__swiper .swiper-slide img {
         width: 100%;
     }
@@ -1887,6 +1891,10 @@ ol {
     .categories__title {
         font-size: 17px;
         line-height: 20px;
+    }
+
+    .gallery__close {
+        right: 15px;
     }
 
     .categories__img {
