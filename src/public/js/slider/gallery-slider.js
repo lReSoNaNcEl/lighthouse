@@ -22,6 +22,9 @@ const gallerySwiperOptions = {
     },
     allowTouchMove: true,
     freeMode: true,
+    thumbs: {
+        swiper: thumbsSwiper,
+    },
     breakpoints: {
         0: {
             loop: true,
@@ -47,9 +50,7 @@ const gallerySwiperOptions = {
                 el: ".swiper-scrollbar",
                 draggable: true,
             },
-            thumbs: {
-                swiper: thumbsSwiper,
-            },
+
             speed: 400,
         }
     },
