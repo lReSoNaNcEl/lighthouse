@@ -25,7 +25,7 @@ const gallerySwiperOptions = {
     thumbs: {
         swiper: thumbsSwiper,
     },
-
+    zoom: true,
     breakpoints: {
         0: {
             loop: true,
@@ -35,7 +35,6 @@ const gallerySwiperOptions = {
             allowTouchMove: true,
             direction: "horizontal",
             mousewheel: false,
-            zoom: true,
             pagination: {
                 el: ".swiper-pagination",
                 type: "fraction",
