@@ -1638,6 +1638,7 @@ ol {
     width: 100%;
     min-width: 100px;
     object-fit: scale-down;
+    background-color: white;
 }
 
 .thumbs__swiper .swiper-slide {
