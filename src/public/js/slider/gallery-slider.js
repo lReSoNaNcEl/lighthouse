@@ -25,9 +25,7 @@ const gallerySwiperOptions = {
     thumbs: {
         swiper: thumbsSwiper,
     },
-    keyboard: {
-        enabled: true,
-    },
+
     breakpoints: {
         0: {
             loop: true,
