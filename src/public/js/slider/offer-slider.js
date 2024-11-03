@@ -7,36 +7,33 @@ const offerSlider = new Swiper(".swiper", {
   effect: "cards",
 });
 
-
-const offerSliderContainer = document.querySelector('.intro__slider')
-const galleryModal = document.querySelector('.gallery__modal')
-const galleryCloseButton = document.querySelector('#gallery__close')
-
-
+const offerSliderContainer = document.querySelector(".intro__slider");
+const galleryModal = document.querySelector(".gallery__modal");
+const galleryCloseButton = document.querySelector("#gallery__close");
 
 const show = () => {
-  toggleModal('99999', 'hidden')
-  galleryModal.focus()
-}
+  toggleModal("99999", "hidden");
+  galleryModal.focus();
+};
 
 const hide = () => {
-  toggleModal('inherit', 'auto')
-  offerSlider.slideTo(gallerySwiper.activeIndex)
-}
+  toggleModal("inherit", "auto");
+  offerSlider.slideTo(gallerySwiper.activeIndex);
+};
 
-offerSliderContainer.addEventListener('click', show)
-galleryCloseButton.addEventListener('click', hide)
+offerSliderContainer.addEventListener("click", show);
+galleryCloseButton.addEventListener("click", hide);
 
 const toggleModal = (zIndex, overflow) => {
-  galleryModal.classList.toggle('hidden')
-  galleryModal.classList.toggle('show')
+  galleryModal.classList.toggle("hidden");
+  galleryModal.classList.toggle("show");
 
-  document.querySelector('.intro-layout').style.zIndex = zIndex
-  document.documentElement.style.overflow = overflow
-}
+  document.querySelector(".intro-layout").style.zIndex = zIndex;
+  document.documentElement.style.overflow = overflow;
+};
 
-galleryModal.addEventListener('keydown', (e) => {
-  if (e.key.toLowerCase() === 'escape') {
-    hide()
+galleryModal.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "escape") {
+    hide();
   }
-})
+});
