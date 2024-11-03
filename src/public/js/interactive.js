@@ -42,13 +42,24 @@ const showOverlay = (callback = Function()) => {
 
   return callback(overlay);
 };
+
 const hideOverlay = (callback = Function()) => {
   const overlay = getOverlay();
-  const hide = () => {
+  const hide = (instance = null) => {
+    if (instance) {
+      instance.hide();
+    }
+
     document.body.style.overflow = "visible";
     overlay.classList.remove("active");
   };
   return callback(overlay, hide);
+};
+
+//Очистка всех EventListeners для элемента overlay
+const overrideOverlayNode = (overlay) => {
+  const clone = overlay.cloneNode(true);
+  overlay.replaceWith(clone);
 };
 
 const letters = [...document.querySelectorAll(".menu__letters span")];
@@ -77,8 +88,9 @@ const isOpenMenu = () => menu.classList.contains("active") && isOpenOverlay();
 const closeMenu = () => {
   menu.classList.remove("active");
   menuCloseBtn.classList.remove("active");
-  hideOverlay((_, hide) => {
+  hideOverlay((overlay, hide) => {
     hide();
+    overrideOverlayNode(overlay);
   });
 };
 
@@ -173,22 +185,20 @@ const tooltipSearch = tippy(searchInput, {
   maxWidth: "none",
   theme: "custom",
   interactive: true,
-  onShow() {
+  onShow(instance) {
     showOverlay();
 
     hideOverlay((overlay, hide) => {
-      overlay.addEventListener("click", hide);
+      overlay.addEventListener("click", () => hide(instance));
     });
   },
   onHide() {
     hideOverlay((overlay, hide) => {
       hide();
-      overlay.removeEventListener("click", hide);
+      overrideOverlayNode(overlay);
     });
   },
-  onClickOutside(instance) {
-    instance.hide();
-  },
+
   plugins: [hideOnEsc, hideOnEmptyInput],
   offset: [0, -5],
 });
@@ -229,7 +239,7 @@ const tooltip = tippy(searchAddressIcon, {
     showOverlay();
 
     hideOverlay((overlay, hide) => {
-      overlay.addEventListener("click", hide);
+      overlay.addEventListener("click", () => hide(instance));
     });
   },
   onHide(instance) {
@@ -240,11 +250,8 @@ const tooltip = tippy(searchAddressIcon, {
 
     hideOverlay((overlay, hide) => {
       hide();
-      overlay.removeEventListener("click", hide);
+      overrideOverlayNode(overlay);
     });
-  },
-  onClickOutside(instance) {
-    instance.hide();
   },
   offset: [0, -5],
   plugins: [hideOnEsc],
