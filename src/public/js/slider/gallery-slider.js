@@ -20,7 +20,7 @@ const gallerySwiperOptions = {
   mousewheel: {
     sensitivity: 0.65,
   },
-  allowTouchMove: true,
+  allowTouchMove: false,
   freeMode: true,
   thumbs: {
     swiper: thumbsSwiper,

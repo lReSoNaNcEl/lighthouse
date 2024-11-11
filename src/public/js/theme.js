@@ -1,27 +1,31 @@
+const THEME_STORAGE_KEY = "theme";
+const THEME_SWITCHER_ID = "theme-switcher";
+
 const siteTheme = {
   LIGHT: "light-theme",
+  SUMMER: "summer-theme",
   DARK: "dark-theme",
+  WINTER: "winter-theme",
 };
 
-//В эту переменную можно устанавливать значение из результатов серверного запроса
-const defaultTheme = localStorage.getItem("theme") || siteTheme.DARK;
+const getCurrentTheme = () =>
+  localStorage.getItem(THEME_STORAGE_KEY) || siteTheme.LIGHT;
 
-localStorage.setItem("theme", defaultTheme);
+localStorage.setItem("theme", getCurrentTheme());
+document.body.classList.add(getCurrentTheme());
 
-document.body.classList.add(defaultTheme);
+document.getElementById(THEME_SWITCHER_ID)?.addEventListener("click", () => {
+  const themes = Object.values(siteTheme);
 
-document.getElementById("theme-switcher")?.addEventListener("click", () => {
-  const oppositeTheme = Object.values(siteTheme).find(
-    (theme) => theme !== defaultTheme,
-  );
+  const currentTheme = getCurrentTheme();
+  const currentThemeIndex = themes.indexOf(currentTheme);
 
-  if (document.body.classList.contains(defaultTheme)) {
-    document.body.classList.remove(defaultTheme);
-    document.body.classList.add(oppositeTheme);
-    localStorage.setItem("theme", oppositeTheme);
-  } else {
-    document.body.classList.add(defaultTheme);
-    document.body.classList.remove(oppositeTheme);
-    localStorage.setItem("theme", defaultTheme);
+  const nextTheme =
+    themes[currentThemeIndex !== themes.length - 1 ? currentThemeIndex + 1 : 0];
+
+  if (document.body.classList.contains(currentTheme)) {
+    document.body.classList.remove(currentTheme);
+    document.body.classList.add(nextTheme);
+    localStorage.setItem("theme", nextTheme);
   }
 });
