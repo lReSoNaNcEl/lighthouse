@@ -30,13 +30,14 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>Кофеяня Уголь</title>
   </head>
   <body>
     <header class="header-layout">
       <div class="header container-fluid">
-        <div class="header__wrapper">
+        <div class="flex gap-x-3 grow sm:gap-x-6">
           <a class="header__link" href="https://mayak.app">
             <svg
               class="header__logo"
@@ -145,58 +146,12 @@
 
             <!-- Блок с выводом результатов поиска, содержимое div динамически передается в Tippy.js модальное окно, display:none не убирать -->
             <div id="search-result" style="display: none">
-              <ul class="result__list" role="listbox">
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__img"
-                    src="/assets/card.png"
-                    alt="Картинка дома"
-                  />
-                  <span class="result__text"> Lorem ipsum dolor. </span>
-                </li>
-
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__icon"
-                    src="/assets/clock.svg"
-                    alt="Иконка часов"
-                  />
-                  <span class="result__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Architecto eum hic ipsam libero minus nam perspiciatis,
-                    provident, quo quod sapiente tempora velit? Architecto
-                    beatae deleniti dolor dolores ipsa quos rerum.
-                  </span>
-                </li>
-
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__img"
-                    src="/assets/card.png"
-                    alt="Картинка дома"
-                  />
-                  <span class="result__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aliquam, autem cum deserunt doloribus impedit quod.
-                  </span>
-                </li>
-
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__icon"
-                    src="/assets/clock.svg"
-                    alt="Иконка часов"
-                  />
-                  <span class="result__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  </span>
-                </li>
-              </ul>
+              <p class="text-center">Введите поисковый запрос</p>
             </div>
           </div>
         </div>
 
-        <div class="header__wrapper">
+        <div class="flex gap-x-3 items-center sm:gap-x-6">
           <div id="theme-switcher" class="header__switcher">
             <svg
               class="switcher__icon light"
@@ -449,6 +404,12 @@
               </div>
             </div>
           </div>
+
+          <a
+            href="https://mayak.app/city/19-moskva"
+            class="header__city hidden text-base xl:text-lg font-medium md:block hover:text-blue-600"
+            >Москва</a
+          >
 
           <div id="menu-button" class="menu__burger">
             <span class="burger__line"></span>
@@ -873,7 +834,7 @@
 
           <!-- Для вставки Youtube плеера вместо слайдера --->
           <!--          <div class="intro__player">-->
-          <!--            <div class="player__layer hidden">-->
+          <!--            <div class="player__layer">-->
           <!--              <iframe class="player__iframe" width="100%" height="100%" src="https://youtube.com/embed/YKLftzceSVw?si=RpW-bSCmYa3vYqAm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>-->
           <!--            </div>-->
           <!--          </div>-->
@@ -1239,7 +1200,7 @@
           ароматов вас ждет горячий кофе, чай, а также прохладительные напитки.
         </p>
 
-        <div id="gallery" class="grid gallery__grid gallery__grid--3">
+        <div id="gallery" class="gallery__grid gallery__grid--3">
           <div class="gallery__item">
             <a
               target="_blank"
@@ -1717,6 +1678,7 @@
     <script src="/js/toastify.js"></script>
     <script src="/js/modal.js"></script>
     <script src="/js/slider/gallery-slider.js"></script>
+    <script src="/js/tailwind.js"></script>
     <script src="/js/registerSW.js"></script>
   </body>
 </html>

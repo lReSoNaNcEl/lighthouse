@@ -21,13 +21,14 @@
     <link href="https://fonts.cdnfonts.com/css/pt-root-ui" rel="stylesheet" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="canonical" href="https://mayak.app" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>Кофеяня Уголь</title>
   </head>
   <body>
     <header class="header-layout">
       <div class="header container-fluid">
-        <div class="header__wrapper">
+        <div class="flex gap-x-3 grow sm:gap-x-6">
           <a class="header__link" href="https://mayak.app">
             <svg
               class="header__logo"
@@ -136,58 +137,12 @@
 
             <!-- Блок с выводом результатов поиска, содержимое div динамически передается в Tippy.js модальное окно, display:none не убирать -->
             <div id="search-result" style="display: none">
-              <ul class="result__list" role="listbox">
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__img"
-                    src="/assets/card.png"
-                    alt="Картинка дома"
-                  />
-                  <span class="result__text"> Lorem ipsum dolor. </span>
-                </li>
-
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__icon"
-                    src="/assets/clock.svg"
-                    alt="Иконка часов"
-                  />
-                  <span class="result__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Architecto eum hic ipsam libero minus nam perspiciatis,
-                    provident, quo quod sapiente tempora velit? Architecto
-                    beatae deleniti dolor dolores ipsa quos rerum.
-                  </span>
-                </li>
-
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__img"
-                    src="/assets/card.png"
-                    alt="Картинка дома"
-                  />
-                  <span class="result__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aliquam, autem cum deserunt doloribus impedit quod.
-                  </span>
-                </li>
-
-                <li class="result__item" role="presentation">
-                  <img
-                    class="result__icon"
-                    src="/assets/clock.svg"
-                    alt="Иконка часов"
-                  />
-                  <span class="result__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  </span>
-                </li>
-              </ul>
+              <p class="text-center">Введите поисковый запрос</p>
             </div>
           </div>
         </div>
 
-        <div class="header__wrapper">
+        <div class="flex gap-x-3 items-center sm:gap-x-6">
           <div id="theme-switcher" class="header__switcher">
             <svg
               class="switcher__icon light"
@@ -440,6 +395,12 @@
               </div>
             </div>
           </div>
+
+          <a
+            href="https://mayak.app/city/19-moskva"
+            class="header__city hidden text-base xl:text-lg font-medium md:block hover:text-blue-600"
+            >Москва</a
+          >
 
           <div id="menu-button" class="menu__burger">
             <span class="burger__line"></span>
@@ -1405,6 +1366,7 @@
     <script src="/js/theme.js"></script>
     <script src="/js/category.js"></script>
     <script src="/js/post.js"></script>
+    <script src="/js/tailwind.js"></script>
     <script src="/js/registerSW.js"></script>
   </body>
 </html>

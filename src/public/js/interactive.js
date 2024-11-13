@@ -143,12 +143,27 @@ const hideOnEmptyInput = {
       const HTML = data
         .map(
           (item) => `
-                <a class="result__item" role="presentation" href="${item.url}">
-                      <img class="result__img" src="${item.thumbnailUrl}" alt="${item.title}">
-                      <span class="result__text">
-                    ${item.title}
-                  </span>
-                    </a>
+            <a class="result__item" role="presentation" href="${item.url}">
+              ${
+                item.thumbnailUrl
+                  ? `<img class="result__img" src="${item.thumbnailUrl}" alt="${item.title}">`
+                  : `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_5806_41389)">
+                    <path d="M10.9997 20.1667C16.0623 20.1667 20.1663 16.0626 20.1663 11C20.1663 5.93739 16.0623 1.83334 10.9997 1.83334C5.93706 1.83334 1.83301 5.93739 1.83301 11C1.83301 16.0626 5.93706 20.1667 10.9997 20.1667Z" stroke="#6C6E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11 5.5V11L14.6667 12.8333" stroke="#6C6E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_5806_41389">
+                    <rect width="22" height="22" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+              `
+              }
+                <span class="result__text">
+                  ${item.title}
+                 </span>
+            </a>
           `,
         )
         .reduce((acc, item) => acc + item, "");
@@ -211,6 +226,9 @@ searchCloseIcon.addEventListener("click", () => {
   searchInput.value = "";
   searchCloseIcon.classList.add("hidden");
   tooltipSearch.disable();
+  tooltipSearch.setContent(
+    '<p class="text-center">Введите поисковый запрос</p>',
+  );
 });
 
 const searchAddressIcon = document.getElementById("search-address-icon");
