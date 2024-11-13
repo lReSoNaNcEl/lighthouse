@@ -237,11 +237,6 @@ ol {
   padding: 9px 30px;
 }
 
-.button-center {
-  display: block;
-  margin: 0 auto;
-}
-
 .button-small {
   min-width: 152px;
   padding: 12px 30px;
@@ -1296,10 +1291,6 @@ ol {
   padding-top: 70px;
 }
 
-.posts .button-center {
-  margin-top: 70px;
-}
-
 .footer-layout {
   width: 100%;
   overflow: hidden;
@@ -1881,10 +1872,6 @@ ol {
 
   .gallery__grid--3 {
     column-count: 2;
-  }
-
-  .posts .button-center {
-    margin-top: 35px;
   }
 
   .cards {
