@@ -805,22 +805,6 @@ ol {
   margin-top: 24px;
 }
 
-.chip {
-  width: max-content;
-  display: inline-block;
-  color: var(--text-color);
-  border: 2px solid var(--yellow-color);
-  border-radius: 16px;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 14px 18px;
-  margin-top: 28px;
-}
-
-.chip:hover {
-  background-color: var(--yellow-color);
-}
-
 .background-layer {
   background: var(--layout-main-color);
   position: relative;
@@ -2198,11 +2182,6 @@ ol {
   .title {
     font-size: 30px;
     line-height: 36px;
-  }
-
-  .chip {
-    padding: 12px 18px;
-    margin-top: 22px;
   }
 
   .button {

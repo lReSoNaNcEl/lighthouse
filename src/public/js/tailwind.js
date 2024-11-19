@@ -9,6 +9,11 @@ if (window.tailwind) {
           lg: "1024px",
           xl: "1200px",
         },
+        colors: {
+          color: "var(--text-color)",
+          search: "var(--search-color)",
+          "search-secondary": "var(--search-secondary-color)",
+        },
       },
     },
   };
