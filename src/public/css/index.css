@@ -179,7 +179,14 @@
 .winter-theme .footer__background.winter:not(.mobile),
 .dark-theme .intro__moon,
 .summer-theme .intro__sun,
-.winter-theme .intro__snowman {
+.winter-theme .intro__snowman,
+.dark-theme .transparent__layer.dark,
+.light-theme .transparent__layer.light,
+.summer-theme .transparent__layer.summer,
+.winter-theme .transparent__layer.winter,
+.dark-theme .layer__particles.dark,
+.summer-theme .layer__particles.summer,
+.winter-theme .layer__particles.winter {
   display: block;
 }
 
@@ -942,6 +949,11 @@ ol {
 }
 .intro__break {
   position: relative;
+  top: -1px;
+}
+
+body.dark-theme .intro__break {
+  top: 0;
 }
 
 .break__layer {
@@ -975,6 +987,11 @@ ol {
   max-width: 129px;
   height: auto;
   cursor: pointer;
+}
+
+.transparent__layer,
+.layer__particles {
+  display: none;
 }
 
 .cards {
@@ -1856,6 +1873,10 @@ ol {
 
   .gallery__grid--3 {
     column-count: 2;
+  }
+
+  .transparent__layer {
+    display: none !important;
   }
 
   .cards {

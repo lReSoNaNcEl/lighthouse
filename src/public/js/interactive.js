@@ -297,29 +297,32 @@ const searchCities = (e) => {
   // )
 };
 
-const breadcrumbsContent = document.getElementById("breadcrumbs-content");
-const breadcrumbsContainer = document.getElementById("breadcrumbs-container");
 const breadcrumbsItem = document.getElementById("breadcrumbs-item");
-const breadcrumbsArrow = breadcrumbsItem.querySelector("span");
 
-const breadcrumbsTooltip = tippy(breadcrumbsItem, {
-  content: breadcrumbsContainer.innerHTML,
-  trigger: "mouseenter click",
-  duration: 0,
-  allowHTML: true,
-  triggerTarget: [breadcrumbsItem],
-  arrow: false,
-  placement: "bottom-start",
-  maxWidth: 279,
-  theme: "custom",
-  appendTo: breadcrumbsContent,
-  interactive: true,
-  plugins: [hideOnEsc],
-  offset: [0, 0],
-  onShow: () => {
-    breadcrumbsArrow.classList.toggle("hidden");
-  },
-  onHide: () => {
-    breadcrumbsArrow.classList.toggle("hidden");
-  },
-});
+if (breadcrumbsItem) {
+  const breadcrumbsContent = document.getElementById("breadcrumbs-content");
+  const breadcrumbsContainer = document.getElementById("breadcrumbs-container");
+  const breadcrumbsArrow = breadcrumbsItem.querySelector("span");
+
+  const breadcrumbsTooltip = tippy(breadcrumbsItem, {
+    content: breadcrumbsContainer.innerHTML,
+    trigger: "mouseenter click",
+    duration: 0,
+    allowHTML: true,
+    triggerTarget: [breadcrumbsItem],
+    arrow: false,
+    placement: "bottom-start",
+    maxWidth: 279,
+    theme: "custom",
+    appendTo: breadcrumbsContent,
+    interactive: true,
+    plugins: [hideOnEsc],
+    offset: [0, 0],
+    onShow: () => {
+      breadcrumbsArrow.classList.toggle("hidden");
+    },
+    onHide: () => {
+      breadcrumbsArrow.classList.toggle("hidden");
+    },
+  });
+}
