@@ -21,10 +21,11 @@
     <link href="https://fonts.cdnfonts.com/css/pt-root-ui" rel="stylesheet" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="canonical" href="https://mayak.app" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind.js"></script>
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>Кофеяня Уголь</title>
   </head>
+
   <body>
     <header class="header-layout">
       <div class="header container-fluid">
@@ -793,19 +794,96 @@
     </header>
 
     <main class="background-layer">
-      <section class="posts container">
+      <section class="relative pt-5 sm:pt-12 xl:pt-16 container">
+        <div
+          class="flex flex-wrap gap-2 font-bold leading-5 items-center mb-5 relative"
+        >
+          <a class="flex gap-2 text-blue-dark" href="https://mayak.app/"
+            >Главная <span>></span></a
+          >
+          <a
+            class="flex gap-2 text-blue-dark"
+            href="https://mayak.app/city/19-moskva"
+            >Москва <span>></span></a
+          >
+          <div
+            id="breadcrumbs-item"
+            class="flex items-center gap-2 text-blue-dark cursor-pointer"
+          >
+            Кафе
+            <span class="hidden">
+              <svg
+                class="text-blue-dark"
+                width="11"
+                height="7"
+                viewBox="0 0 11 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.8901 0.954253L10.339 0.403228C10.2656 0.329645 10.181 0.292969 10.0854 0.292969C9.98999 0.292969 9.90544 0.329645 9.83201 0.403228L5.50006 4.73495L1.1683 0.403344C1.09483 0.32976 1.01028 0.293085 0.914772 0.293085C0.819222 0.293085 0.734674 0.32976 0.661245 0.403344L0.110259 0.954407C0.0366758 1.02784 0 1.11238 0 1.20793C0 1.30341 0.0367916 1.38795 0.110259 1.46138L5.24653 6.59777C5.31996 6.67124 5.40455 6.70795 5.50006 6.70795C5.59557 6.70795 5.68 6.67124 5.75339 6.59777L10.8901 1.46138C10.9635 1.38792 11 1.30337 11 1.20793C11 1.11238 10.9635 1.02784 10.8901 0.954253Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div id="breadcrumbs-content"></div>
+          <div id="breadcrumbs-container" style="display: none">
+            <div
+              class="px-4 sm:px-7 py-3 text-xs xs:text-sm sm:text-base absolute flex flex-col gap-y-2 bg-search rounded-3xl leading-5 w-[120px] xs:w-[180px] md:w-[279px] z-10 shadow-md"
+            >
+              <a
+                href="https://mayak.app/offer/15098-bogdanov-power-v-moskva-moto"
+                class="text-color hover:text-darkblue"
+                >Bogdanov power</a
+              >
+              <a
+                href="https://mayak.app/offer/27235-muzey-retro-avtomobiley-vbv-v-moskva-avto"
+                class="text-color hover:text-darkblue"
+                >Музей ретро автомобилей ВБВ</a
+              >
+              <a
+                href="https://mayak.app/offer/28650-kofeynya-kovorking-from-berlin-v-moskva-biznes"
+                class="text-color hover:text-darkblue"
+                >Кофейня- коворкинг from Berlin</a
+              >
+              <a
+                href="https://mayak.app/offer/22083-bouling-klug-moreon-v-moskva-otdyh"
+                class="text-color hover:text-darkblue"
+                >Боулинг-клуг Мореон</a
+              >
+              <a
+                href="https://mayak.app/offer/22140-razvlekatelnyy-centr-igralayf-na-festivalnoy-v-moskva-otdyh"
+                class="text-color hover:text-darkblue"
+                >Развлекательный центр Игралайф на Фестивальной</a
+              >
+              <a
+                href="https://mayak.app/offer/22143-razvlekatelnyy-centr-igralayf-na-pererve-v-moskva-otdyh"
+                class="text-color hover:text-darkblue"
+                >Развлекательный центр Игралайф на Перерве</a
+              >
+              <a
+                href="https://mayak.app/offer/22089-park-razvlecheniy-kosmik-na-vernadskogo-v-moskva-otdyh"
+                class="text-color hover:text-darkblue"
+                >Парк развлечений Космик на Вернадского</a
+              >
+            </div>
+          </div>
+        </div>
         <h2 class="title">Новые направления</h2>
 
-        <div class="flex flex-col gap-4 mt-5 sm:flex-row lg:mt-7">
+        <div
+          class="flex flex-col justify-between gap-4 mt-5 sm:flex-row lg:mt-7"
+        >
           <a
             href="https://mayak.app/offer/25851-kompyuternyy-klub-colizeum-na-pervomayskoy-v-moskva-sport"
-            class="text-base text-color font-bold text-center rounded-2xl border-2 border-yellow-400 inline-block w-max min-w-[160px] py-3 lg:py-3.5 px-[18px] hover:bg-yellow-400 transition-all duration-300"
+            class="text-base text-color font-bold text-center rounded-2xl border-2 border-yellow inline-block w-max min-w-[160px] py-3 lg:py-3.5 px-[18px] hover:bg-yellow transition-all duration-300"
             >Мне повезет</a
           >
 
           <div class="relative text-color inline group">
             <button
-              class="text-center font-bold border-2 border-solid border-yellow-400 rounded-2xl text-base min-w-40 py-3 lg:py-3.5 px-[18px] cursor-pointer group-hover:bg-yellow-400 transition-all duration-200"
+              class="text-center font-bold border-2 border-solid border-yellow rounded-2xl text-base min-w-40 py-3 lg:py-3.5 px-[18px] cursor-pointer group-hover:bg-yellow transition-all duration-200"
             >
               Мне повезет
             </button>
@@ -1463,7 +1541,7 @@
     <script src="/js/theme.js"></script>
     <script src="/js/category.js"></script>
     <script src="/js/post.js"></script>
-    <script src="/js/tailwind.js"></script>
+    <script src="/js/tailwind-config.js"></script>
     <script src="/js/registerSW.js"></script>
   </body>
 </html>

@@ -24,6 +24,7 @@ self.addEventListener("install", (event) => {
       "/js/app-banner.js",
       "/js/theme.js",
       "/js/tailwind.js",
+      "/js/tailwind-config.js",
       "/js/slider/offer-slider.js",
       "/js/slider/card-slider.js",
       "/js/slider/adbanner-slider.js",
