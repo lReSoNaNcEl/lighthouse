@@ -11,6 +11,11 @@ const postsSwiper = new Swiper(".posts__cards__swiper", {
   breakpoints: {
     0: {
       loop: false,
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+    },
+    480: {
+      loop: false,
       slidesPerView: 2,
       spaceBetween: 26,
     },

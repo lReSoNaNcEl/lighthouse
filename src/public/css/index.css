@@ -2140,6 +2140,10 @@ ol {
     padding-right: 0;
   }
 
+  .posts__swiper__navigation .swiper-slide {
+    max-width: 190px;
+  }
+
   .switcher__icon {
     width: 15px;
     height: 15px;
@@ -2330,6 +2334,7 @@ ol {
 
   .posts__cards__swiper {
     margin-top: 20px;
+    border-top-right-radius: 0;
   }
 
   .gallery__close {
