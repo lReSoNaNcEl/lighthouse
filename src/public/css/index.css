@@ -1656,6 +1656,12 @@ body.dark-theme .intro__break {
   overflow: hidden;
 }
 
+.posts__swiper__container {
+  max-width: 1456px;
+  padding: 0 6%;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 1440px) {
   .gallery__swiper .swiper-slide {
     margin-left: -12vw;
@@ -2084,6 +2090,16 @@ body.dark-theme .intro__break {
 
 
   .posts__swiper__navigation {
+    position: relative;
+    max-width: 375px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .posts__swiper__container {
+    display: flex; /* Включаем флекс */
+    justify-content: flex-start; /* Контент выравнивается слева */
     padding-right: 0;
   }
 
