@@ -15,7 +15,8 @@ export default defineConfig({
             input: {
                 main: path.resolve(__dirname, './src/index.html'),
                 popular: path.resolve(__dirname, './src/popular.html'),
-                city: path.resolve(__dirname, './src/city.html')
+                city: path.resolve(__dirname, './src/city.html'),
+                offer: path.resolve(__dirname, './src/offer.html')
             }
         }
     },

@@ -38,7 +38,30 @@
     <header class="header-layout">
       <div class="header container-fluid">
         <div class="flex gap-x-3 grow sm:gap-x-6">
-          <a class="header__link" href="https://mayak.app">
+          <a
+            class="flex self-center shrink-0 relative animate-[headShake_.8s_ease_10s]"
+            href="https://mayak.app"
+          >
+            <img
+              class="w-5 h-5 sm:w-7 sm:h-7 -top-5 -right-3.5 sm:-right-7 sm:-top-7 lg:-top-3.5 lg:-right-9 absolute pointer-events-none hidden [.dark-theme_&]:block"
+              src="/assets/stars-night.png"
+              alt=""
+            />
+            <img
+              class="w-8 h-[35px] xl:w-[65px] xl:h-[72px] -top-5 -left-5 xl:-left-[70px] absolute pointer-events-none hidden [.summer-theme_&]:block"
+              src="/assets/umbrella.png"
+              alt=""
+            />
+            <img
+              class="w-[87px] h-20 -top-5 left-[-100%] absolute pointer-events-none hidden 3xl:[.winter-theme_&]:block"
+              src="/assets/santa.png"
+              alt=""
+            />
+            <img
+              class="w-[25px] h-[13px] sm:w-10 sm:h-[auto] -top-2.5 sm:-top-4 sm:-left-px z-10 absolute pointer-events-none hidden [.winter-theme_&]:block 3xl:[.winter-theme_&]:hidden"
+              src="/assets/santa-hat.png"
+              alt=""
+            />
             <svg
               class="header__logo"
               viewBox="0 0 89 18"
@@ -804,9 +827,11 @@
     <main class="background-layer">
       <div class="relative">
         <section class="intro-layout">
-          <div class="intro container">
+          <div
+            class="flex justify-between relative lg:gap-3 flex-col lg:flex-row container"
+          >
             <div class="intro__wrapper">
-              <h1 class="title">Кофейня Уголь</h1>
+              <h1 class="title sm:ml-3">Кофейня Уголь</h1>
               <div class="intro__contacts">
                 <a
                   href="https://yandex.ru/maps/?pt=150.812045,59.565730&z=16&l=map"
@@ -832,13 +857,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Для вставки Youtube плеера вместо слайдера --->
-            <!--          <div class="intro__player">-->
-            <!--            <div class="player__layer">-->
-            <!--              <iframe class="player__iframe" width="100%" height="100%" src="https://youtube.com/embed/YKLftzceSVw?si=RpW-bSCmYa3vYqAm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>-->
-            <!--            </div>-->
-            <!--          </div>-->
 
             <div class="intro__slider">
               <div class="swiper">

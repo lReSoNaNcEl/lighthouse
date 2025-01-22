@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -21,11 +21,15 @@
     <link href="https://fonts.cdnfonts.com/css/pt-root-ui" rel="stylesheet" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="canonical" href="https://mayak.app" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <script src="/js/tailwind.js"></script>
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>Кофеяня Уголь</title>
   </head>
-
   <body>
     <header class="header-layout">
       <div class="header container-fluid">
@@ -817,674 +821,417 @@
     </header>
 
     <main class="background-layer">
-      <section class="relative pt-5 sm:pt-12 xl:pt-16 container">
-        <div
-          class="flex flex-wrap gap-2 font-bold leading-5 items-center mb-5 relative"
-        >
-          <a class="flex gap-2 text-blue-dark" href="https://mayak.app/"
-            >Главная <span>></span></a
-          >
-          <a
-            class="flex gap-2 text-blue-dark"
-            href="https://mayak.app/city/19-moskva"
-            >Москва <span>></span></a
-          >
+      <div class="relative">
+        <section class="intro-layout">
           <div
-            id="breadcrumbs-item"
-            class="flex items-center gap-2 text-blue-dark cursor-pointer"
+            class="flex justify-between relative lg:gap-3 flex-col lg:flex-row container"
           >
-            Кафе
-            <span class="hidden">
-              <svg
-                class="text-blue-dark"
-                width="11"
-                height="7"
-                viewBox="0 0 11 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.8901 0.954253L10.339 0.403228C10.2656 0.329645 10.181 0.292969 10.0854 0.292969C9.98999 0.292969 9.90544 0.329645 9.83201 0.403228L5.50006 4.73495L1.1683 0.403344C1.09483 0.32976 1.01028 0.293085 0.914772 0.293085C0.819222 0.293085 0.734674 0.32976 0.661245 0.403344L0.110259 0.954407C0.0366758 1.02784 0 1.11238 0 1.20793C0 1.30341 0.0367916 1.38795 0.110259 1.46138L5.24653 6.59777C5.31996 6.67124 5.40455 6.70795 5.50006 6.70795C5.59557 6.70795 5.68 6.67124 5.75339 6.59777L10.8901 1.46138C10.9635 1.38792 11 1.30337 11 1.20793C11 1.11238 10.9635 1.02784 10.8901 0.954253Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-          </div>
-          <div id="breadcrumbs-content"></div>
-          <div id="breadcrumbs-container" style="display: none">
+            <div class="intro__wrapper">
+              <h1 class="title sm:ml-3">Кофеяня Уголь</h1>
+              <div class="intro__contacts">
+                <a
+                  href="https://yandex.ru/maps/?pt=150.812045,59.565730&z=16&l=map"
+                  target="_blank"
+                >
+                  <div class="contacts__item">
+                    г. Магадан, ул. Пролетарская, 14
+                  </div>
+                </a>
+                <a href="tel:79213966892" target="_blank">
+                  <div class="contacts__item">7 (921) 396-68-92</div>
+                </a>
+                <a href="tel:79213966892" target="_blank">
+                  <div class="contacts__item">
+                    youtube.com/@Powered_by_Bogdanov
+                  </div>
+                </a>
+                <div
+                  class="contacts__item copy"
+                  data-value="mayak.app/79213966892"
+                >
+                  mayak.app/79213966892
+                </div>
+              </div>
+            </div>
+
             <div
-              class="px-4 sm:px-7 py-3 text-xs xs:text-sm sm:text-base absolute flex flex-col gap-y-2 bg-search rounded-3xl leading-5 w-[120px] xs:w-[180px] md:w-[279px] z-10 shadow-md"
+              class="max-w-full lg:max-w-[450px] xl:max-w-[612px] w-full h-auto relative z-10 mt-6 lg:mt-[70px] shrink-0"
             >
-              <a
-                href="https://mayak.app/offer/15098-bogdanov-power-v-moskva-moto"
-                class="text-color hover:text-darkblue"
-                >Bogdanov power</a
-              >
-              <a
-                href="https://mayak.app/offer/27235-muzey-retro-avtomobiley-vbv-v-moskva-avto"
-                class="text-color hover:text-darkblue"
-                >Музей ретро автомобилей ВБВ</a
-              >
-              <a
-                href="https://mayak.app/offer/28650-kofeynya-kovorking-from-berlin-v-moskva-biznes"
-                class="text-color hover:text-darkblue"
-                >Кофейня- коворкинг from Berlin</a
-              >
-              <a
-                href="https://mayak.app/offer/22083-bouling-klug-moreon-v-moskva-otdyh"
-                class="text-color hover:text-darkblue"
-                >Боулинг-клуг Мореон</a
-              >
-              <a
-                href="https://mayak.app/offer/22140-razvlekatelnyy-centr-igralayf-na-festivalnoy-v-moskva-otdyh"
-                class="text-color hover:text-darkblue"
-                >Развлекательный центр Игралайф на Фестивальной</a
-              >
-              <a
-                href="https://mayak.app/offer/22143-razvlekatelnyy-centr-igralayf-na-pererve-v-moskva-otdyh"
-                class="text-color hover:text-darkblue"
-                >Развлекательный центр Игралайф на Перерве</a
-              >
-              <a
-                href="https://mayak.app/offer/22089-park-razvlecheniy-kosmik-na-vernadskogo-v-moskva-otdyh"
-                class="text-color hover:text-darkblue"
-                >Парк развлечений Космик на Вернадского</a
-              >
+              <div class="block relative pb-[56.25%] pt-9 overflow-hidden">
+                <iframe
+                  class="w-full h-full absolute top-0 left-0"
+                  width="100%"
+                  height="100%"
+                  src="https://youtube.com/embed/YKLftzceSVw?si=RpW-bSCmYa3vYqAm"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen=""
+                ></iframe>
+              </div>
+            </div>
+
+            <img class="intro__moon" src="/assets/moon.svg" alt="Луна" />
+            <img class="intro__sun" src="/assets/sun.svg" alt="Солнце" />
+          </div>
+        </section>
+
+        <div class="intro__break">
+          <div class="break__layer container">
+            <div class="intro__coins">
+              <img
+                id="coin-gold"
+                src="/assets/coin-gold.png"
+                alt="Золотая монета"
+              />
+              <img
+                id="coin-silver"
+                src="/assets/coin-silver.png"
+                alt="Серебрянная монета"
+              />
+              <img
+                id="coin-bronze"
+                src="/assets/coin-bronze.png"
+                alt="Бронзовая монета"
+              />
+              <img
+                id="coin-tree"
+                src="/assets/coin-tree.png"
+                alt="Деревянная монета"
+              />
+            </div>
+
+            <img
+              class="intro__snowman"
+              src="/assets/snowman.svg"
+              alt="Снеговик"
+            />
+          </div>
+
+          <img class="dark" src="/assets/break-dark.png" alt="" />
+          <img class="light" src="/assets/break-light.png" alt="" />
+          <img class="winter" src="/assets/break-winter.png" alt="" />
+          <img class="summer" src="/assets/break-summer.png" alt="" />
+        </div>
+
+        <img
+          class="layer__particles winter object-cover object-center xl:object-contain xl:object-top absolute right-0 top-0 w-full h-full"
+          src="/assets/layer-snowfall.svg"
+          alt=""
+        />
+        <img
+          class="layer__particles summer object-left-top xl:object-top object-none xl:object-cover absolute right-0 top-[90px] xl:top-[135px] w-full xl:h-[512px]"
+          src="/assets/layer-clouds.svg"
+          alt=""
+        />
+        <img
+          class="layer__particles dark object-cover absolute right-0 top-0 xl:top-5 w-full h-full"
+          src="/assets/layer-stars.svg"
+          alt=""
+        />
+
+        <img
+          class="transparent__layer winter absolute right-0 top-0 w-[1117px]"
+          src="/assets/transparent-layer-winter.svg"
+          alt=""
+        />
+        <img
+          class="transparent__layer summer light absolute right-0 top-0 w-[1117px]"
+          src="/assets/transparent-layer-light.svg"
+          alt=""
+        />
+        <img
+          class="transparent__layer dark absolute right-0 top-0 w-[1117px]"
+          src="/assets/transparent-layer-dark.svg"
+          alt=""
+        />
+      </div>
+
+      <section class="gallery container">
+        <p class="gallery__description">
+          Если запах свежеиспеченного теста пробуждает в вас сильный голод, то
+          это заведение сможет доставить вам радость. Помимо умопомрачительных
+          ароматов вас ждет горячий кофе, чай, а также прохладительные напитки.
+        </p>
+
+        <div id="gallery" class="gallery__grid gallery__grid--3">
+          <div class="gallery__item">
+            <a
+              target="_blank"
+              href="https://mayak.app/media/65/651687d305050246597787.webp?nocache=1&amp;size=1"
+            >
+              <img
+                src="https://mayak.app/media/65/651687d305050246597787.webp?nocache=1&amp;size=3"
+                loading="lazy"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="gallery__item">
+            <a
+              target="_blank"
+              href="https://mayak.app/media/65/651687d5897fa240576884.webp?nocache=1&amp;size=1"
+            >
+              <img
+                src="https://mayak.app/media/65/651687d5897fa240576884.webp?nocache=1&amp;size=3"
+                loading="lazy"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="gallery__item">
+            <a
+              target="_blank"
+              href="https://mayak.app/media/65/651687d6bf7d5410058010.webp?nocache=1&amp;size=1"
+            >
+              <img
+                src="https://mayak.app/media/65/651687d6bf7d5410058010.webp?nocache=1&amp;size=3"
+                loading="lazy"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="gallery__item">
+            <a
+              target="_blank"
+              href="https://mayak.app/media/65/651687d8350c8981230099.webp?nocache=1&amp;size=1"
+            >
+              <img
+                src="https://mayak.app/media/65/651687d8350c8981230099.webp?nocache=1&amp;size=3"
+                loading="lazy"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="gallery__item">
+            <a
+              target="_blank"
+              href="https://mayak.app/media/65/651687d9cebb9095355509.webp?nocache=1&amp;size=1"
+            >
+              <img
+                src="https://mayak.app/media/65/651687d9cebb9095355509.webp?nocache=1&amp;size=3"
+                loading="lazy"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="gallery__item">
+            <a
+              target="_blank"
+              href="https://mayak.app/media/65/651687db8548c695683632.webp?nocache=1&amp;size=1"
+            >
+              <img
+                src="https://mayak.app/media/65/651687db8548c695683632.webp?nocache=1&amp;size=3"
+                loading="lazy"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__embed">
+              <iframe
+                src="https://www.youtube.com/embed/R8VaorJVjNQ?si=x02kuhnVxDVeAFDD"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__embed">
+              <iframe
+                src="https://www.youtube.com/embed/lC8Xb58qRcc?si=UBH1qwjwVzHwBsCU"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__embed">
+              <iframe
+                src="https://www.youtube.com/embed/R8VaorJVjNQ?si=x02kuhnVxDVeAFDD"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__embed">
+              <iframe
+                src="https://www.youtube.com/embed/lC8Xb58qRcc?si=UBH1qwjwVzHwBsCU"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__embed">
+              <iframe
+                src="https://www.youtube.com/embed/R8VaorJVjNQ?si=x02kuhnVxDVeAFDD"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__embed">
+              <iframe
+                src="https://www.youtube.com/embed/lC8Xb58qRcc?si=UBH1qwjwVzHwBsCU"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
             </div>
           </div>
         </div>
-        <h2 class="title">Новые направления</h2>
-
-        <div
-          class="flex flex-col justify-between gap-4 mt-5 sm:flex-row lg:mt-7"
-        >
-          <a
-            href="https://mayak.app/offer/25851-kompyuternyy-klub-colizeum-na-pervomayskoy-v-moskva-sport"
-            class="text-base text-color font-bold text-center rounded-2xl border-2 border-yellow inline-block w-max min-w-[160px] py-3 lg:py-3.5 px-[18px] hover:bg-yellow transition-all duration-300"
-            >Мне повезет</a
-          >
-
-          <div class="relative text-color inline group">
-            <button
-              class="text-center font-bold border-2 border-solid border-yellow rounded-2xl text-base min-w-40 py-3 lg:py-3.5 px-[18px] cursor-pointer group-hover:bg-yellow transition-all duration-200"
-            >
-              Мне повезет
-            </button>
-            <div
-              class="group-hover:max-h-max max-w-60 w-max absolute shadow-md bg-search rounded-2xl max-h-0 z-10 min-w-40 overflow-hidden transition-all duration-200"
-            >
-              <a
-                class="px-4 py-3 block no-underline hover:bg-search-secondary"
-                href="https://mayak.app/my"
-                target="_blank"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aspernatur, consequatur!</a
-              >
-              <a
-                class="px-4 py-3 block no-underline hover:bg-search-secondary"
-                href="https://mayak.app/my"
-                target="_blank"
-                >Lorem ipsum dolor sit amet.</a
-              >
-              <a
-                class="px-4 py-3 block no-underline hover:bg-search-secondary"
-                href="https://mayak.app/my"
-                target="_blank"
-                >Lorem ipsum dolor.</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div id="get-posts-container" class="cards">
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus green">🍑 бонус 20%</a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus green">🍑 бонус 20%</a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img
-                loading="lazy"
-                class="card__img"
-                src="/assets/card.png"
-                alt=""
-              />
-            </a>
-            <a href="#" class="card__bonus green">🍑 бонус 20%</a>
-            <a href="#" class="card__title"
-              >Студия рисования песком Песочница</a
-            >
-            <a href="#" class="card__description">Детям в Астрахани</a>
-            <a class="card__tag" href="#"> Kids Club </a>
-            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
-          </div>
-        </div>
-        <button
-          id="get-posts-btn"
-          class="button button-secondary flex mx-auto justify-center mt-8 lg:mt-16"
-          type="button"
-        >
-          Показать ещё
-        </button>
       </section>
 
-      <section class="categories-layout">
-        <div class="categories container">
-          <a class="categories__item" href="#">
-            <div class="categories__title">Спорт</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/dumbbell.png"
-            />
-          </a>
+      <section class="headline-layout">
+        <div class="container">
+          <a class="headline__link" href="https://mayak.app/city/97-magadan"
+            >Магадан</a
+          >
+          <a
+            class="headline__link"
+            href="https://mayak.app/category/21-eda/97-magadan"
+            >Еда</a
+          >
 
-          <a class="categories__item" href="#">
-            <div class="categories__title">Еда</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/pizza.png"
-            />
-          </a>
+          <div class="headline__list">
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/564-kofe-s-soboy/97-magadan"
+              >#Кофе С собой</a
+            >
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/13815-konditerskiy-izdeliya/97-magadan"
+              >#Кондитерские Изделия</a
+            >
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/13816-raznovidnosti-kofe/97-magadan"
+              >#Разновидности Кофе</a
+            >
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/563-kofe/97-magadan"
+              >#Кофе</a
+            >
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/13817-raf/97-magadan"
+              >#Раф</a
+            >
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/13820-espresso/97-magadan"
+              >#Эспрессо</a
+            >
+            <a
+              class="headline__tag"
+              href="https://mayak.app/tag/13819-kapuchino/97-magadan"
+              >#Капучино</a
+            >
+          </div>
+        </div>
+      </section>
 
-          <a class="categories__item" href="#">
-            <div class="categories__title">Beauty</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/beauty.png"
-            />
-          </a>
+      <section class="container">
+        <h2 class="title">Вы смотрели в Москве</h2>
 
-          <a class="categories__item" href="#">
-            <div class="categories__title">Животные</div>
-            <img loading="lazy" class="categories__img" src="/assets/dog.png" />
-          </a>
+        <div class="cards">
+          <div class="card">
+            <a href="#">
+              <img
+                loading="lazy"
+                class="card__img"
+                src="/assets/card.png"
+                alt=""
+              />
+            </a>
+            <a href="#" class="card__bonus yellow">🍑 бонус 20%</a>
+            <a href="#" class="card__title"
+              >Студия рисования песком Песочница</a
+            >
+            <a href="#" class="card__description">Детям в Астрахани</a>
+            <a class="card__tag" href="#"> Kids Club </a>
+            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+          </div>
 
-          <a class="categories__item" href="#">
-            <div class="categories__title">Авто</div>
-            <img loading="lazy" class="categories__img" src="/assets/car.png" />
-          </a>
+          <div class="card">
+            <a href="#">
+              <img
+                loading="lazy"
+                class="card__img"
+                src="/assets/card.png"
+                alt=""
+              />
+            </a>
+            <a href="#" class="card__bonus green">🍑 бонус 20%</a>
+            <a href="#" class="card__title"
+              >Студия рисования песком Песочница</a
+            >
+            <a href="#" class="card__description">Детям в Астрахани</a>
+            <a class="card__tag" href="#"> Kids Club </a>
+            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+          </div>
 
-          <a class="categories__item" href="#">
-            <div class="categories__title">Свадьба</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/ring.png"
-            />
-          </a>
+          <div class="card">
+            <a href="#">
+              <img
+                loading="lazy"
+                class="card__img"
+                src="/assets/card.png"
+                alt=""
+              />
+            </a>
+            <a href="#" class="card__title"
+              >Студия рисования песком Песочница</a
+            >
+            <a href="#" class="card__description">Детям в Астрахани</a>
+            <a class="card__tag" href="#"> Kids Club </a>
+            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+          </div>
 
-          <a class="categories__item" href="#">
-            <div class="categories__title">Отдых</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/rest.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Музыка</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/music.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Жилье</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/tent.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Здоровье</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/heart.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Бизнес</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/handshake.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Хобби</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/lego.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Разное</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/sundry.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Реклама</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/loudspeaker.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Учимся</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/book.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Баня</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/bathhouse.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Детям</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/duck.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Игры</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/gamepad.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Мода</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/amethyst.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Стройка</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/crane.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Мото</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/moped.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Вода</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/beach.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Тур</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/geolocation.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Шоу</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/confetti.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Небо</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/balloon.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Финансы</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/coins.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Дискотека</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/party.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Рыбалка</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/fishing.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Охота</div>
-            <img loading="lazy" class="categories__img" src="/assets/elk.png" />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">ВДНХ</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/exhibition.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Дружить</div>
-            <img loading="lazy" class="categories__img" src="/assets/man.png" />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Праздники</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/calendar.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">IT-сервисы</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/laptop.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Крипто</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/cryptocurrency.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Сообщества</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/communities.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Кино</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/cinema.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Театр</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/disguise.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Знаменитости</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/stars.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Новый год</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/tree.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Наука</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/neutron.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Путешествие</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/globe.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Культура</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/statue.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Товары для дома</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/goods.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Фитнес</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/fitness.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Йога</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/yoga.png"
-            />
-          </a>
-
-          <a class="categories__item" href="#">
-            <div class="categories__title">Мебель</div>
-            <img
-              loading="lazy"
-              class="categories__img"
-              src="/assets/furniture.png"
-            />
-          </a>
+          <div class="card">
+            <a href="#">
+              <img
+                loading="lazy"
+                class="card__img"
+                src="/assets/card.png"
+                alt=""
+              />
+            </a>
+            <a href="#" class="card__title"
+              >Студия рисования песком Песочница</a
+            >
+            <a href="#" class="card__description">Детям в Астрахани</a>
+            <a class="card__tag" href="#"> Kids Club </a>
+            <p class="card__address">г.Москва, ул.Мясницкая 20, 1 этаж</p>
+          </div>
         </div>
       </section>
 
       <footer class="footer-layout">
         <div class="background__lighthouse">
+          <img
+            draggable="false"
+            id="coin-gold-chest"
+            class="footer__coin"
+            src="/assets/lighthouse-coin.svg"
+            alt="Золотая монета"
+          />
+          <img
+            draggable="false"
+            class="footer__chest"
+            src="/assets/chest.svg"
+            alt="Сундук с сокровищами"
+          />
+
           <img
             class="footer__background dark"
             src="/assets/footer-dark.svg"
@@ -1534,6 +1281,118 @@
       </footer>
     </main>
 
+    <dialog id="modal-gold-coin" class="modal">
+      <form class="modal__layer" method="dialog">
+        <h3 class="modal__title">Золотая монета</h3>
+        <img class="modal__coin" src="/assets/coin-gold.png" />
+        <p class="modal__description">
+          Маяк – интерактивный каталог, освещает интересные идеи для досуга и
+          самые выгодные варианты исполнения желаний.
+        </p>
+        <div class="modal__wrapper">
+          <button class="button button-primary">Принять</button>
+          <button class="button button-secondary">Закрыть</button>
+        </div>
+        <svg
+          class="modal__cross"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.64493 6.99989L13.6616 1.99489C13.8813 1.7752 14.0047 1.47724 14.0047 1.16656C14.0047 0.855872 13.8813 0.557912 13.6616 0.338224C13.4419 0.118537 13.1439 -0.00488281 12.8333 -0.00488281C12.5226 -0.00488281 12.2246 0.118537 12.0049 0.338224L6.99993 5.35489L1.99493 0.338224C1.77524 0.118537 1.47728 -0.00488281 1.1666 -0.00488281C0.85591 -0.00488281 0.55795 0.118537 0.338262 0.338224C0.118574 0.557912 -0.0048449 0.855872 -0.0048449 1.16656C-0.00484491 1.47724 0.118574 1.7752 0.338262 1.99489L5.35493 6.99989L0.338262 12.0049C0.228912 12.1133 0.142119 12.2424 0.0828891 12.3846C0.023659 12.5267 -0.00683594 12.6792 -0.00683594 12.8332C-0.00683594 12.9872 0.023659 13.1397 0.0828891 13.2819C0.142119 13.4241 0.228912 13.5531 0.338262 13.6616C0.446719 13.7709 0.575753 13.8577 0.717923 13.9169C0.860092 13.9762 1.01258 14.0067 1.1666 14.0067C1.32061 14.0067 1.4731 13.9762 1.61527 13.9169C1.75744 13.8577 1.88647 13.7709 1.99493 13.6616L6.99993 8.64489L12.0049 13.6616C12.1134 13.7709 12.2424 13.8577 12.3846 13.9169C12.5268 13.9762 12.6792 14.0067 12.8333 14.0067C12.9873 14.0067 13.1398 13.9762 13.2819 13.9169C13.4241 13.8577 13.5531 13.7709 13.6616 13.6616C13.7709 13.5531 13.8577 13.4241 13.917 13.2819C13.9762 13.1397 14.0067 12.9872 14.0067 12.8332C14.0067 12.6792 13.9762 12.5267 13.917 12.3846C13.8577 12.2424 13.7709 12.1133 13.6616 12.0049L8.64493 6.99989Z"
+            fill="currentColor"
+          />
+        </svg>
+      </form>
+    </dialog>
+
+    <dialog id="modal-silver-coin" class="modal">
+      <form class="modal__layer" method="dialog">
+        <h3 class="modal__title">Серебрянная монета</h3>
+        <img class="modal__coin" src="/assets/coin-silver.png" />
+        <p class="modal__description">
+          Маяк – интерактивный каталог, освещает интересные идеи для досуга и
+          самые выгодные варианты исполнения желаний.
+        </p>
+        <div class="modal__wrapper">
+          <button class="button button-primary">Принять</button>
+          <button class="button button-secondary">Закрыть</button>
+        </div>
+        <svg
+          class="modal__cross"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.64493 6.99989L13.6616 1.99489C13.8813 1.7752 14.0047 1.47724 14.0047 1.16656C14.0047 0.855872 13.8813 0.557912 13.6616 0.338224C13.4419 0.118537 13.1439 -0.00488281 12.8333 -0.00488281C12.5226 -0.00488281 12.2246 0.118537 12.0049 0.338224L6.99993 5.35489L1.99493 0.338224C1.77524 0.118537 1.47728 -0.00488281 1.1666 -0.00488281C0.85591 -0.00488281 0.55795 0.118537 0.338262 0.338224C0.118574 0.557912 -0.0048449 0.855872 -0.0048449 1.16656C-0.00484491 1.47724 0.118574 1.7752 0.338262 1.99489L5.35493 6.99989L0.338262 12.0049C0.228912 12.1133 0.142119 12.2424 0.0828891 12.3846C0.023659 12.5267 -0.00683594 12.6792 -0.00683594 12.8332C-0.00683594 12.9872 0.023659 13.1397 0.0828891 13.2819C0.142119 13.4241 0.228912 13.5531 0.338262 13.6616C0.446719 13.7709 0.575753 13.8577 0.717923 13.9169C0.860092 13.9762 1.01258 14.0067 1.1666 14.0067C1.32061 14.0067 1.4731 13.9762 1.61527 13.9169C1.75744 13.8577 1.88647 13.7709 1.99493 13.6616L6.99993 8.64489L12.0049 13.6616C12.1134 13.7709 12.2424 13.8577 12.3846 13.9169C12.5268 13.9762 12.6792 14.0067 12.8333 14.0067C12.9873 14.0067 13.1398 13.9762 13.2819 13.9169C13.4241 13.8577 13.5531 13.7709 13.6616 13.6616C13.7709 13.5531 13.8577 13.4241 13.917 13.2819C13.9762 13.1397 14.0067 12.9872 14.0067 12.8332C14.0067 12.6792 13.9762 12.5267 13.917 12.3846C13.8577 12.2424 13.7709 12.1133 13.6616 12.0049L8.64493 6.99989Z"
+            fill="currentColor"
+          />
+        </svg>
+      </form>
+    </dialog>
+
+    <dialog id="modal-bronze-coin" class="modal">
+      <form class="modal__layer" method="dialog">
+        <h3 class="modal__title">Бронзовая монета</h3>
+        <img class="modal__coin" src="/assets/coin-bronze.png" />
+        <p class="modal__description">
+          Маяк – интерактивный каталог, освещает интересные идеи для досуга и
+          самые выгодные варианты исполнения желаний.
+        </p>
+        <div class="modal__wrapper">
+          <button class="button button-primary">Принять</button>
+          <button class="button button-secondary">Закрыть</button>
+        </div>
+        <svg
+          class="modal__cross"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.64493 6.99989L13.6616 1.99489C13.8813 1.7752 14.0047 1.47724 14.0047 1.16656C14.0047 0.855872 13.8813 0.557912 13.6616 0.338224C13.4419 0.118537 13.1439 -0.00488281 12.8333 -0.00488281C12.5226 -0.00488281 12.2246 0.118537 12.0049 0.338224L6.99993 5.35489L1.99493 0.338224C1.77524 0.118537 1.47728 -0.00488281 1.1666 -0.00488281C0.85591 -0.00488281 0.55795 0.118537 0.338262 0.338224C0.118574 0.557912 -0.0048449 0.855872 -0.0048449 1.16656C-0.00484491 1.47724 0.118574 1.7752 0.338262 1.99489L5.35493 6.99989L0.338262 12.0049C0.228912 12.1133 0.142119 12.2424 0.0828891 12.3846C0.023659 12.5267 -0.00683594 12.6792 -0.00683594 12.8332C-0.00683594 12.9872 0.023659 13.1397 0.0828891 13.2819C0.142119 13.4241 0.228912 13.5531 0.338262 13.6616C0.446719 13.7709 0.575753 13.8577 0.717923 13.9169C0.860092 13.9762 1.01258 14.0067 1.1666 14.0067C1.32061 14.0067 1.4731 13.9762 1.61527 13.9169C1.75744 13.8577 1.88647 13.7709 1.99493 13.6616L6.99993 8.64489L12.0049 13.6616C12.1134 13.7709 12.2424 13.8577 12.3846 13.9169C12.5268 13.9762 12.6792 14.0067 12.8333 14.0067C12.9873 14.0067 13.1398 13.9762 13.2819 13.9169C13.4241 13.8577 13.5531 13.7709 13.6616 13.6616C13.7709 13.5531 13.8577 13.4241 13.917 13.2819C13.9762 13.1397 14.0067 12.9872 14.0067 12.8332C14.0067 12.6792 13.9762 12.5267 13.917 12.3846C13.8577 12.2424 13.7709 12.1133 13.6616 12.0049L8.64493 6.99989Z"
+            fill="currentColor"
+          />
+        </svg>
+      </form>
+    </dialog>
+
+    <dialog id="modal-tree-coin" class="modal">
+      <form class="modal__layer" method="dialog">
+        <h3 class="modal__title">Деревянная монета</h3>
+        <img class="modal__coin" src="/assets/coin-tree.png" />
+        <p class="modal__description">
+          Маяк – интерактивный каталог, освещает интересные идеи для досуга и
+          самые выгодные варианты исполнения желаний.
+        </p>
+        <div class="modal__wrapper">
+          <button class="button button-primary">Принять</button>
+          <button class="button button-secondary">Закрыть</button>
+        </div>
+        <svg
+          class="modal__cross"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.64493 6.99989L13.6616 1.99489C13.8813 1.7752 14.0047 1.47724 14.0047 1.16656C14.0047 0.855872 13.8813 0.557912 13.6616 0.338224C13.4419 0.118537 13.1439 -0.00488281 12.8333 -0.00488281C12.5226 -0.00488281 12.2246 0.118537 12.0049 0.338224L6.99993 5.35489L1.99493 0.338224C1.77524 0.118537 1.47728 -0.00488281 1.1666 -0.00488281C0.85591 -0.00488281 0.55795 0.118537 0.338262 0.338224C0.118574 0.557912 -0.0048449 0.855872 -0.0048449 1.16656C-0.00484491 1.47724 0.118574 1.7752 0.338262 1.99489L5.35493 6.99989L0.338262 12.0049C0.228912 12.1133 0.142119 12.2424 0.0828891 12.3846C0.023659 12.5267 -0.00683594 12.6792 -0.00683594 12.8332C-0.00683594 12.9872 0.023659 13.1397 0.0828891 13.2819C0.142119 13.4241 0.228912 13.5531 0.338262 13.6616C0.446719 13.7709 0.575753 13.8577 0.717923 13.9169C0.860092 13.9762 1.01258 14.0067 1.1666 14.0067C1.32061 14.0067 1.4731 13.9762 1.61527 13.9169C1.75744 13.8577 1.88647 13.7709 1.99493 13.6616L6.99993 8.64489L12.0049 13.6616C12.1134 13.7709 12.2424 13.8577 12.3846 13.9169C12.5268 13.9762 12.6792 14.0067 12.8333 14.0067C12.9873 14.0067 13.1398 13.9762 13.2819 13.9169C13.4241 13.8577 13.5531 13.7709 13.6616 13.6616C13.7709 13.5531 13.8577 13.4241 13.917 13.2819C13.9762 13.1397 14.0067 12.9872 14.0067 12.8332C14.0067 12.6792 13.9762 12.5267 13.917 12.3846C13.8577 12.2424 13.7709 12.1133 13.6616 12.0049L8.64493 6.99989Z"
+            fill="currentColor"
+          />
+        </svg>
+      </form>
+    </dialog>
+
     <div id="banner-mobile-app" class="banner">
       <div class="banner__wrapper">
         <img
@@ -1556,14 +1415,21 @@
       </div>
     </div>
 
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="/js/interactive.js"></script>
     <script src="/js/app-banner.js"></script>
     <script src="/js/theme.js"></script>
-    <script src="/js/category.js"></script>
-    <script src="/js/post.js"></script>
+    <script src="/js/slider/offer-slider.js"></script>
+    <script src="/js/zoom.js"></script>
+    <script src="/js/toastify.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/slider/gallery-slider.js"></script>
     <script src="/js/tailwind-config.js"></script>
     <script src="/js/registerSW.js"></script>
   </body>

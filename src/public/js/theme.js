@@ -11,7 +11,7 @@ const siteTheme = {
 const getCurrentTheme = () =>
   localStorage.getItem(THEME_STORAGE_KEY) || siteTheme.LIGHT;
 
-localStorage.setItem("theme", getCurrentTheme());
+localStorage.setItem(THEME_STORAGE_KEY, getCurrentTheme());
 document.body.classList.add(getCurrentTheme());
 
 document.getElementById(THEME_SWITCHER_ID)?.addEventListener("click", () => {
@@ -26,6 +26,6 @@ document.getElementById(THEME_SWITCHER_ID)?.addEventListener("click", () => {
   if (document.body.classList.contains(currentTheme)) {
     document.body.classList.remove(currentTheme);
     document.body.classList.add(nextTheme);
-    localStorage.setItem("theme", nextTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
   }
 });
