@@ -866,6 +866,10 @@ ol {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
+.posts__swiper__navigation .swiper-slide img {
+  border-radius: 17px;
+}
+
 .swiper-slide-shadow {
   opacity: 1;
 }
@@ -1636,8 +1640,8 @@ body.dark-theme .intro__break {
 .posts__cards__swiper {
   max-width: 100%;
   margin-top: 55px;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+  border-top-right-radius: 17px;
+  border-top-left-radius: 17px;
   overflow: hidden;
 }
 
@@ -2076,6 +2080,11 @@ body.dark-theme .intro__break {
     width: 30px;
     height: 30px;
     border-radius: 7px;
+  }
+
+
+  .posts__swiper__navigation {
+    padding-right: 0;
   }
 
   .switcher__icon {

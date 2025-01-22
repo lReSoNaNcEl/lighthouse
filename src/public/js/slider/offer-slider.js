@@ -11,7 +11,9 @@ const offerSliderContainer = document.querySelector(".intro__slider");
 const galleryModal = document.querySelector(".gallery__modal");
 const galleryCloseButton = document.querySelector("#gallery__close");
 
-const show = () => {
+const show = (e) => {
+  const slideIndex = e.target.parentElement.getAttribute('data-swiper-slide-index');
+  gallerySwiper.slideTo(slideIndex);
   toggleModal("99999", "hidden");
   galleryModal.focus();
 };
