@@ -1,4 +1,4 @@
-const slidersOfCards = document.querySelectorAll(".card__images__swiper");
+const getSlidersOfCards = () => document.querySelectorAll(".card__images__swiper");
 
 const swiperSettings = {
   slidesPerView: 1,
@@ -54,13 +54,15 @@ function throttle(func, ms) {
 
 const delay = 50;
 
-slidersOfCards.forEach((swiperElement) => {
+function initSliderOfCards(swiperElement) {
+  if (swiperElement.swiper) {
+    return;
+  }
+
   const cardImagesSwiper = new Swiper(swiperElement, swiperSettings);
 
   let currentZone = 0;
-
   const slidesAmount = cardImagesSwiper.slides.length;
-
   const containerBounds = swiperElement.getBoundingClientRect();
 
   function calculateZonesRestrictions() {
@@ -80,7 +82,7 @@ slidersOfCards.forEach((swiperElement) => {
 
   function calculateCurrentZone(clientX) {
     return containerZones.findIndex((zone) =>
-      inBetween(clientX, zone.start, zone.end),
+        inBetween(clientX, zone.start, zone.end),
     );
   }
 
@@ -91,9 +93,32 @@ slidersOfCards.forEach((swiperElement) => {
     if (newZone === currentZone) return;
 
     currentZone = newZone;
-
     cardImagesSwiper.slideTo(newZone);
   }, delay);
 
   swiperElement.addEventListener("mousemove", debouncedMouseMove);
-});
+  swiperElement.swiper = cardImagesSwiper;
+}
+
+function initAllSlidersOfCards() {
+  getSlidersOfCards().forEach((swiperElement) => {
+    if (!swiperElement.swiper) {
+      initSliderOfCards(swiperElement);
+    }
+  });
+}
+
+function reinitSlidersOfCards() {
+  getSlidersOfCards().forEach(swiperEl => {
+    if (swiperEl.swiper) {
+      swiperEl.swiper.destroy();
+      swiperEl.swiper = null;
+    }
+  });
+
+  initAllSlidersOfCards();
+}
+
+initAllSlidersOfCards()
+
+window.reinitSlidersOfCards = reinitSlidersOfCards
